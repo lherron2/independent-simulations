@@ -1,0 +1,1614 @@
+<ForceField>
+  <Info>
+    <DateGenerated>2023-02-21</DateGenerated>
+    <Source Source="leaprc.RNA.Shaw_charmm22-ions" md5hash="b8bd898f8e00fa84a96e150ed8863716" sourcePackage="AmberTools" sourcePackageVersion="20.15">leaprc.RNA.Shaw_charmm22-ions</Source>
+    <Reference>Homeyer N., Horn A. H. C., Lanig H., Sticht H. (2006). AMBER force-field parameters for phosphorylated amino acids in different protonation states: phosphoserine, phosphothreonine, phosphotyrosine, and phosphohistidine. J. Mol. Model. 12, 281. Steinbrecher, T., Latzer, J., and Case, D.A. (2012). Revised AMBER parameters for bioorganic phosphates. J. Chem. Theory Comput. 8, 4405-4412.</Reference>
+  </Info>
+  <AtomTypes>
+    <Type element="C" name="RNA-C" class="C" mass="12.01"/>
+    <Type element="C" name="RNA-CA" class="CA" mass="12.01"/>
+    <Type element="C" name="RNA-CB" class="CB" mass="12.01"/>
+    <Type element="C" name="RNA-CI" class="CI" mass="12.01"/>
+    <Type element="C" name="RNA-CP" class="CP" mass="12.01"/>
+    <Type element="C" name="RNA-CS" class="CS" mass="12.01"/>
+    <Type element="C" name="RNA-CQ" class="CQ" mass="12.01"/>
+    <Type element="C" name="RNA-CT" class="CT" mass="12.01"/>
+    <Type element="C" name="RNA-C5" class="C5" mass="12.01"/>
+    <Type element="C" name="RNA-C4" class="C4" mass="12.01"/>
+    <Type element="H" name="RNA-H" class="H" mass="1.008"/>
+    <Type element="H" name="RNA-H1" class="H1" mass="1.008"/>
+    <Type element="H" name="RNA-H2" class="H2" mass="1.008"/>
+    <Type element="H" name="RNA-HA" class="HA" mass="1.008"/>
+    <Type element="H" name="RNA-H4" class="H4" mass="1.008"/>
+    <Type element="H" name="RNA-H5" class="H5" mass="1.008"/>
+    <Type element="H" name="RNA-HO" class="HO" mass="1.008"/>
+    <Type element="N" name="RNA-NA" class="NA" mass="14.01"/>
+    <Type element="N" name="RNA-NB" class="NB" mass="14.01"/>
+    <Type element="N" name="RNA-NC" class="NC" mass="14.01"/>
+    <Type element="N" name="RNA-N2" class="N2" mass="14.01"/>
+    <Type element="N" name="RNA-N*" class="N*" mass="14.01"/>
+    <Type element="O" name="RNA-O" class="O" mass="16.0"/>
+    <Type element="O" name="RNA-OH" class="OH" mass="16.0"/>
+    <Type element="O" name="RNA-OS" class="OS" mass="16.0"/>
+    <Type element="P" name="RNA-P" class="P" mass="30.97"/>
+    <Type element="C" name="RNA-CE" class="CE" mass="12.01"/>
+    <Type element="C" name="RNA-CF" class="CF" mass="12.01"/>
+    <Type element="N" name="RNA-NR" class="NR" mass="14.01"/>
+    <Type element="N" name="RNA-ND" class="ND" mass="14.01"/>
+    <Type element="O" name="RNA-OQ" class="OQ" mass="16.0"/>
+    <Type element="O" name="RNA-OR" class="OR" mass="16.0"/>
+  </AtomTypes>
+  <Residues>
+    <Residue name="A">
+      <Atom name="P" type="RNA-P" charge="1.1662"/>
+      <Atom name="OP1" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="OP2" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="O5'" type="RNA-OR" charge="-0.4989"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0394"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.2007"/>
+      <Atom name="N9" type="RNA-NR" charge="-0.0251"/>
+      <Atom name="C8" type="RNA-C5" charge="0.2006"/>
+      <Atom name="H8" type="RNA-H5" charge="0.1553"/>
+      <Atom name="N7" type="RNA-NB" charge="-0.6073"/>
+      <Atom name="C5" type="RNA-CE" charge="0.0515"/>
+      <Atom name="C6" type="RNA-CF" charge="0.7009"/>
+      <Atom name="N6" type="RNA-N2" charge="-1.0088"/>
+      <Atom name="H61" type="RNA-H" charge="0.4738"/>
+      <Atom name="H62" type="RNA-H" charge="0.4738"/>
+      <Atom name="N1" type="RNA-ND" charge="-0.7969"/>
+      <Atom name="C2" type="RNA-CQ" charge="0.5875"/>
+      <Atom name="H2" type="RNA-H5" charge="0.065"/>
+      <Atom name="N3" type="RNA-ND" charge="-0.6997"/>
+      <Atom name="C4" type="RNA-CE" charge="0.3053"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OR" charge="-0.5246"/>
+      <Bond atomName1="P" atomName2="OP1"/>
+      <Bond atomName1="P" atomName2="OP2"/>
+      <Bond atomName1="P" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N9"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N9" atomName2="C8"/>
+      <Bond atomName1="N9" atomName2="C4"/>
+      <Bond atomName1="C8" atomName2="H8"/>
+      <Bond atomName1="C8" atomName2="N7"/>
+      <Bond atomName1="N7" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="C6"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C6" atomName2="N6"/>
+      <Bond atomName1="C6" atomName2="N1"/>
+      <Bond atomName1="N6" atomName2="H61"/>
+      <Bond atomName1="N6" atomName2="H62"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="H2"/>
+      <Bond atomName1="C2" atomName2="N3"/>
+      <Bond atomName1="N3" atomName2="C4"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <ExternalBond atomName="P"/>
+      <ExternalBond atomName="O3'"/>
+    </Residue>
+    <Residue name="A3">
+      <Atom name="P" type="RNA-P" charge="1.1662"/>
+      <Atom name="OP1" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="OP2" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="O5'" type="RNA-OR" charge="-0.4989"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0394"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.2007"/>
+      <Atom name="N9" type="RNA-NR" charge="-0.0251"/>
+      <Atom name="C8" type="RNA-C5" charge="0.2006"/>
+      <Atom name="H8" type="RNA-H5" charge="0.1553"/>
+      <Atom name="N7" type="RNA-NB" charge="-0.6073"/>
+      <Atom name="C5" type="RNA-CE" charge="0.0515"/>
+      <Atom name="C6" type="RNA-CF" charge="0.7009"/>
+      <Atom name="N6" type="RNA-N2" charge="-1.0088"/>
+      <Atom name="H61" type="RNA-H" charge="0.4738"/>
+      <Atom name="H62" type="RNA-H" charge="0.4738"/>
+      <Atom name="N1" type="RNA-ND" charge="-0.7969"/>
+      <Atom name="C2" type="RNA-CQ" charge="0.5875"/>
+      <Atom name="H2" type="RNA-H5" charge="0.065"/>
+      <Atom name="N3" type="RNA-ND" charge="-0.6997"/>
+      <Atom name="C4" type="RNA-CE" charge="0.3053"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OH" charge="-0.6541"/>
+      <Atom name="HO3'" type="RNA-HO" charge="0.4376"/>
+      <Bond atomName1="P" atomName2="OP1"/>
+      <Bond atomName1="P" atomName2="OP2"/>
+      <Bond atomName1="P" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N9"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N9" atomName2="C8"/>
+      <Bond atomName1="N9" atomName2="C4"/>
+      <Bond atomName1="C8" atomName2="H8"/>
+      <Bond atomName1="C8" atomName2="N7"/>
+      <Bond atomName1="N7" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="C6"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C6" atomName2="N6"/>
+      <Bond atomName1="C6" atomName2="N1"/>
+      <Bond atomName1="N6" atomName2="H61"/>
+      <Bond atomName1="N6" atomName2="H62"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="H2"/>
+      <Bond atomName1="C2" atomName2="N3"/>
+      <Bond atomName1="N3" atomName2="C4"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <Bond atomName1="O3'" atomName2="HO3'"/>
+      <ExternalBond atomName="P"/>
+    </Residue>
+    <Residue name="A5">
+      <Atom name="HO5'" type="RNA-HO" charge="0.4295"/>
+      <Atom name="O5'" type="RNA-OH" charge="-0.6223"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0394"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.2007"/>
+      <Atom name="N9" type="RNA-NR" charge="-0.0251"/>
+      <Atom name="C8" type="RNA-C5" charge="0.2006"/>
+      <Atom name="H8" type="RNA-H5" charge="0.1553"/>
+      <Atom name="N7" type="RNA-NB" charge="-0.6073"/>
+      <Atom name="C5" type="RNA-CE" charge="0.0515"/>
+      <Atom name="C6" type="RNA-CF" charge="0.7009"/>
+      <Atom name="N6" type="RNA-N2" charge="-1.0088"/>
+      <Atom name="H61" type="RNA-H" charge="0.4738"/>
+      <Atom name="H62" type="RNA-H" charge="0.4738"/>
+      <Atom name="N1" type="RNA-ND" charge="-0.7969"/>
+      <Atom name="C2" type="RNA-CQ" charge="0.5875"/>
+      <Atom name="H2" type="RNA-H5" charge="0.065"/>
+      <Atom name="N3" type="RNA-ND" charge="-0.6997"/>
+      <Atom name="C4" type="RNA-CE" charge="0.3053"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OR" charge="-0.5246"/>
+      <Bond atomName1="HO5'" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N9"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N9" atomName2="C8"/>
+      <Bond atomName1="N9" atomName2="C4"/>
+      <Bond atomName1="C8" atomName2="H8"/>
+      <Bond atomName1="C8" atomName2="N7"/>
+      <Bond atomName1="N7" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="C6"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C6" atomName2="N6"/>
+      <Bond atomName1="C6" atomName2="N1"/>
+      <Bond atomName1="N6" atomName2="H61"/>
+      <Bond atomName1="N6" atomName2="H62"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="H2"/>
+      <Bond atomName1="C2" atomName2="N3"/>
+      <Bond atomName1="N3" atomName2="C4"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <ExternalBond atomName="O3'"/>
+    </Residue>
+    <Residue name="AN">
+      <Atom name="HO5'" type="RNA-HO" charge="0.4295"/>
+      <Atom name="O5'" type="RNA-OH" charge="-0.6223"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0394"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.2007"/>
+      <Atom name="N9" type="RNA-NR" charge="-0.0251"/>
+      <Atom name="C8" type="RNA-C5" charge="0.2006"/>
+      <Atom name="H8" type="RNA-H5" charge="0.1553"/>
+      <Atom name="N7" type="RNA-NB" charge="-0.6073"/>
+      <Atom name="C5" type="RNA-CE" charge="0.0515"/>
+      <Atom name="C6" type="RNA-CF" charge="0.7009"/>
+      <Atom name="N6" type="RNA-N2" charge="-1.0088"/>
+      <Atom name="H61" type="RNA-H" charge="0.4738"/>
+      <Atom name="H62" type="RNA-H" charge="0.4738"/>
+      <Atom name="N1" type="RNA-ND" charge="-0.7969"/>
+      <Atom name="C2" type="RNA-CQ" charge="0.5875"/>
+      <Atom name="H2" type="RNA-H5" charge="0.065"/>
+      <Atom name="N3" type="RNA-ND" charge="-0.6997"/>
+      <Atom name="C4" type="RNA-CE" charge="0.3053"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OH" charge="-0.6541"/>
+      <Atom name="HO3'" type="RNA-HO" charge="0.4376"/>
+      <Bond atomName1="HO5'" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N9"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N9" atomName2="C8"/>
+      <Bond atomName1="N9" atomName2="C4"/>
+      <Bond atomName1="C8" atomName2="H8"/>
+      <Bond atomName1="C8" atomName2="N7"/>
+      <Bond atomName1="N7" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="C6"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C6" atomName2="N6"/>
+      <Bond atomName1="C6" atomName2="N1"/>
+      <Bond atomName1="N6" atomName2="H61"/>
+      <Bond atomName1="N6" atomName2="H62"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="H2"/>
+      <Bond atomName1="C2" atomName2="N3"/>
+      <Bond atomName1="N3" atomName2="C4"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <Bond atomName1="O3'" atomName2="HO3'"/>
+    </Residue>
+    <Residue name="C">
+      <Atom name="P" type="RNA-P" charge="1.1662"/>
+      <Atom name="OP1" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="OP2" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="O5'" type="RNA-OR" charge="-0.4989"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0066"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.2029"/>
+      <Atom name="N1" type="RNA-N*" charge="-0.0484"/>
+      <Atom name="C6" type="RNA-C4" charge="0.0053"/>
+      <Atom name="H6" type="RNA-H4" charge="0.1958"/>
+      <Atom name="C5" type="RNA-C4" charge="-0.5215"/>
+      <Atom name="H5" type="RNA-HA" charge="0.1928"/>
+      <Atom name="C4" type="RNA-CA" charge="0.8185"/>
+      <Atom name="N4" type="RNA-N2" charge="-0.8716"/>
+      <Atom name="H41" type="RNA-H" charge="0.3827"/>
+      <Atom name="H42" type="RNA-H" charge="0.3827"/>
+      <Atom name="N3" type="RNA-NC" charge="-0.7584"/>
+      <Atom name="C2" type="RNA-C" charge="0.7538"/>
+      <Atom name="O2" type="RNA-O" charge="-0.6252"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OR" charge="-0.5246"/>
+      <Bond atomName1="P" atomName2="OP1"/>
+      <Bond atomName1="P" atomName2="OP2"/>
+      <Bond atomName1="P" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N1"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N1" atomName2="C6"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C6" atomName2="H6"/>
+      <Bond atomName1="C6" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="H5"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C4" atomName2="N4"/>
+      <Bond atomName1="C4" atomName2="N3"/>
+      <Bond atomName1="N4" atomName2="H41"/>
+      <Bond atomName1="N4" atomName2="H42"/>
+      <Bond atomName1="N3" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="O2"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <ExternalBond atomName="P"/>
+      <ExternalBond atomName="O3'"/>
+    </Residue>
+    <Residue name="C3">
+      <Atom name="P" type="RNA-P" charge="1.1662"/>
+      <Atom name="OP1" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="OP2" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="O5'" type="RNA-OR" charge="-0.4989"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0066"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.2029"/>
+      <Atom name="N1" type="RNA-N*" charge="-0.0484"/>
+      <Atom name="C6" type="RNA-C4" charge="0.0053"/>
+      <Atom name="H6" type="RNA-H4" charge="0.1958"/>
+      <Atom name="C5" type="RNA-C4" charge="-0.5215"/>
+      <Atom name="H5" type="RNA-HA" charge="0.1928"/>
+      <Atom name="C4" type="RNA-CA" charge="0.8185"/>
+      <Atom name="N4" type="RNA-N2" charge="-0.8716"/>
+      <Atom name="H41" type="RNA-H" charge="0.3827"/>
+      <Atom name="H42" type="RNA-H" charge="0.3827"/>
+      <Atom name="N3" type="RNA-NC" charge="-0.7584"/>
+      <Atom name="C2" type="RNA-C" charge="0.7538"/>
+      <Atom name="O2" type="RNA-O" charge="-0.6252"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OH" charge="-0.6541"/>
+      <Atom name="HO3'" type="RNA-HO" charge="0.4376"/>
+      <Bond atomName1="P" atomName2="OP1"/>
+      <Bond atomName1="P" atomName2="OP2"/>
+      <Bond atomName1="P" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N1"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N1" atomName2="C6"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C6" atomName2="H6"/>
+      <Bond atomName1="C6" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="H5"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C4" atomName2="N4"/>
+      <Bond atomName1="C4" atomName2="N3"/>
+      <Bond atomName1="N4" atomName2="H41"/>
+      <Bond atomName1="N4" atomName2="H42"/>
+      <Bond atomName1="N3" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="O2"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <Bond atomName1="O3'" atomName2="HO3'"/>
+      <ExternalBond atomName="P"/>
+    </Residue>
+    <Residue name="C5">
+      <Atom name="HO5'" type="RNA-HO" charge="0.4295"/>
+      <Atom name="O5'" type="RNA-OH" charge="-0.6223"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0066"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.2029"/>
+      <Atom name="N1" type="RNA-N*" charge="-0.0484"/>
+      <Atom name="C6" type="RNA-C4" charge="0.0053"/>
+      <Atom name="H6" type="RNA-H4" charge="0.1958"/>
+      <Atom name="C5" type="RNA-C4" charge="-0.5215"/>
+      <Atom name="H5" type="RNA-HA" charge="0.1928"/>
+      <Atom name="C4" type="RNA-CA" charge="0.8185"/>
+      <Atom name="N4" type="RNA-N2" charge="-0.8716"/>
+      <Atom name="H41" type="RNA-H" charge="0.3827"/>
+      <Atom name="H42" type="RNA-H" charge="0.3827"/>
+      <Atom name="N3" type="RNA-NC" charge="-0.7584"/>
+      <Atom name="C2" type="RNA-C" charge="0.7538"/>
+      <Atom name="O2" type="RNA-O" charge="-0.6252"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OR" charge="-0.5246"/>
+      <Bond atomName1="HO5'" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N1"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N1" atomName2="C6"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C6" atomName2="H6"/>
+      <Bond atomName1="C6" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="H5"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C4" atomName2="N4"/>
+      <Bond atomName1="C4" atomName2="N3"/>
+      <Bond atomName1="N4" atomName2="H41"/>
+      <Bond atomName1="N4" atomName2="H42"/>
+      <Bond atomName1="N3" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="O2"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <ExternalBond atomName="O3'"/>
+    </Residue>
+    <Residue name="CN">
+      <Atom name="HO5'" type="RNA-HO" charge="0.4295"/>
+      <Atom name="O5'" type="RNA-OH" charge="-0.6223"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0066"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.2029"/>
+      <Atom name="N1" type="RNA-N*" charge="-0.0484"/>
+      <Atom name="C6" type="RNA-C4" charge="0.0053"/>
+      <Atom name="H6" type="RNA-H4" charge="0.1958"/>
+      <Atom name="C5" type="RNA-C4" charge="-0.5215"/>
+      <Atom name="H5" type="RNA-HA" charge="0.1928"/>
+      <Atom name="C4" type="RNA-CA" charge="0.8185"/>
+      <Atom name="N4" type="RNA-N2" charge="-0.8716"/>
+      <Atom name="H41" type="RNA-H" charge="0.3827"/>
+      <Atom name="H42" type="RNA-H" charge="0.3827"/>
+      <Atom name="N3" type="RNA-NC" charge="-0.7584"/>
+      <Atom name="C2" type="RNA-C" charge="0.7538"/>
+      <Atom name="O2" type="RNA-O" charge="-0.6252"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OH" charge="-0.6541"/>
+      <Atom name="HO3'" type="RNA-HO" charge="0.4376"/>
+      <Bond atomName1="HO5'" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N1"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N1" atomName2="C6"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C6" atomName2="H6"/>
+      <Bond atomName1="C6" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="H5"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C4" atomName2="N4"/>
+      <Bond atomName1="C4" atomName2="N3"/>
+      <Bond atomName1="N4" atomName2="H41"/>
+      <Bond atomName1="N4" atomName2="H42"/>
+      <Bond atomName1="N3" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="O2"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <Bond atomName1="O3'" atomName2="HO3'"/>
+    </Residue>
+    <Residue name="G">
+      <Atom name="P" type="RNA-P" charge="1.1662"/>
+      <Atom name="OP1" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="OP2" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="O5'" type="RNA-OR" charge="-0.4989"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0191"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.2006"/>
+      <Atom name="N9" type="RNA-NR" charge="0.0492"/>
+      <Atom name="C8" type="RNA-CP" charge="0.1374"/>
+      <Atom name="H8" type="RNA-H5" charge="0.164"/>
+      <Atom name="N7" type="RNA-NB" charge="-0.5709"/>
+      <Atom name="C5" type="RNA-CB" charge="0.1744"/>
+      <Atom name="C6" type="RNA-C" charge="0.477"/>
+      <Atom name="O6" type="RNA-O" charge="-0.5597"/>
+      <Atom name="N1" type="RNA-NA" charge="-0.5606"/>
+      <Atom name="H1" type="RNA-H" charge="0.4243"/>
+      <Atom name="C2" type="RNA-CA" charge="0.7657"/>
+      <Atom name="N2" type="RNA-N2" charge="-1.0158"/>
+      <Atom name="H21" type="RNA-H" charge="0.4607"/>
+      <Atom name="H22" type="RNA-H" charge="0.4607"/>
+      <Atom name="N3" type="RNA-NC" charge="-0.6323"/>
+      <Atom name="C4" type="RNA-CB" charge="0.1222"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OR" charge="-0.5246"/>
+      <Bond atomName1="P" atomName2="OP1"/>
+      <Bond atomName1="P" atomName2="OP2"/>
+      <Bond atomName1="P" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N9"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N9" atomName2="C8"/>
+      <Bond atomName1="N9" atomName2="C4"/>
+      <Bond atomName1="C8" atomName2="H8"/>
+      <Bond atomName1="C8" atomName2="N7"/>
+      <Bond atomName1="N7" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="C6"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C6" atomName2="O6"/>
+      <Bond atomName1="C6" atomName2="N1"/>
+      <Bond atomName1="N1" atomName2="H1"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="N2"/>
+      <Bond atomName1="C2" atomName2="N3"/>
+      <Bond atomName1="N2" atomName2="H21"/>
+      <Bond atomName1="N2" atomName2="H22"/>
+      <Bond atomName1="N3" atomName2="C4"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <ExternalBond atomName="P"/>
+      <ExternalBond atomName="O3'"/>
+    </Residue>
+    <Residue name="G3">
+      <Atom name="P" type="RNA-P" charge="1.1662"/>
+      <Atom name="OP1" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="OP2" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="O5'" type="RNA-OR" charge="-0.4989"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0191"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.2006"/>
+      <Atom name="N9" type="RNA-NR" charge="0.0492"/>
+      <Atom name="C8" type="RNA-CP" charge="0.1374"/>
+      <Atom name="H8" type="RNA-H5" charge="0.164"/>
+      <Atom name="N7" type="RNA-NB" charge="-0.5709"/>
+      <Atom name="C5" type="RNA-CB" charge="0.1744"/>
+      <Atom name="C6" type="RNA-C" charge="0.477"/>
+      <Atom name="O6" type="RNA-O" charge="-0.5597"/>
+      <Atom name="N1" type="RNA-NA" charge="-0.5606"/>
+      <Atom name="H1" type="RNA-H" charge="0.4243"/>
+      <Atom name="C2" type="RNA-CA" charge="0.7657"/>
+      <Atom name="N2" type="RNA-N2" charge="-1.0158"/>
+      <Atom name="H21" type="RNA-H" charge="0.4607"/>
+      <Atom name="H22" type="RNA-H" charge="0.4607"/>
+      <Atom name="N3" type="RNA-NC" charge="-0.6323"/>
+      <Atom name="C4" type="RNA-CB" charge="0.1222"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OH" charge="-0.6541"/>
+      <Atom name="HO3'" type="RNA-HO" charge="0.4376"/>
+      <Bond atomName1="P" atomName2="OP1"/>
+      <Bond atomName1="P" atomName2="OP2"/>
+      <Bond atomName1="P" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N9"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N9" atomName2="C8"/>
+      <Bond atomName1="N9" atomName2="C4"/>
+      <Bond atomName1="C8" atomName2="H8"/>
+      <Bond atomName1="C8" atomName2="N7"/>
+      <Bond atomName1="N7" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="C6"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C6" atomName2="O6"/>
+      <Bond atomName1="C6" atomName2="N1"/>
+      <Bond atomName1="N1" atomName2="H1"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="N2"/>
+      <Bond atomName1="C2" atomName2="N3"/>
+      <Bond atomName1="N2" atomName2="H21"/>
+      <Bond atomName1="N2" atomName2="H22"/>
+      <Bond atomName1="N3" atomName2="C4"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <Bond atomName1="O3'" atomName2="HO3'"/>
+      <ExternalBond atomName="P"/>
+    </Residue>
+    <Residue name="G5">
+      <Atom name="HO5'" type="RNA-HO" charge="0.4295"/>
+      <Atom name="O5'" type="RNA-OH" charge="-0.6223"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0191"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.2006"/>
+      <Atom name="N9" type="RNA-NR" charge="0.0492"/>
+      <Atom name="C8" type="RNA-CP" charge="0.1374"/>
+      <Atom name="H8" type="RNA-H5" charge="0.164"/>
+      <Atom name="N7" type="RNA-NB" charge="-0.5709"/>
+      <Atom name="C5" type="RNA-CB" charge="0.1744"/>
+      <Atom name="C6" type="RNA-C" charge="0.477"/>
+      <Atom name="O6" type="RNA-O" charge="-0.5597"/>
+      <Atom name="N1" type="RNA-NA" charge="-0.5606"/>
+      <Atom name="H1" type="RNA-H" charge="0.4243"/>
+      <Atom name="C2" type="RNA-CA" charge="0.7657"/>
+      <Atom name="N2" type="RNA-N2" charge="-1.0158"/>
+      <Atom name="H21" type="RNA-H" charge="0.4607"/>
+      <Atom name="H22" type="RNA-H" charge="0.4607"/>
+      <Atom name="N3" type="RNA-NC" charge="-0.6323"/>
+      <Atom name="C4" type="RNA-CB" charge="0.1222"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OR" charge="-0.5246"/>
+      <Bond atomName1="HO5'" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N9"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N9" atomName2="C8"/>
+      <Bond atomName1="N9" atomName2="C4"/>
+      <Bond atomName1="C8" atomName2="H8"/>
+      <Bond atomName1="C8" atomName2="N7"/>
+      <Bond atomName1="N7" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="C6"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C6" atomName2="O6"/>
+      <Bond atomName1="C6" atomName2="N1"/>
+      <Bond atomName1="N1" atomName2="H1"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="N2"/>
+      <Bond atomName1="C2" atomName2="N3"/>
+      <Bond atomName1="N2" atomName2="H21"/>
+      <Bond atomName1="N2" atomName2="H22"/>
+      <Bond atomName1="N3" atomName2="C4"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <ExternalBond atomName="O3'"/>
+    </Residue>
+    <Residue name="GN">
+      <Atom name="HO5'" type="RNA-HO" charge="0.4295"/>
+      <Atom name="O5'" type="RNA-OH" charge="-0.6223"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0191"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.2006"/>
+      <Atom name="N9" type="RNA-NR" charge="0.0492"/>
+      <Atom name="C8" type="RNA-CP" charge="0.1374"/>
+      <Atom name="H8" type="RNA-H5" charge="0.164"/>
+      <Atom name="N7" type="RNA-NB" charge="-0.5709"/>
+      <Atom name="C5" type="RNA-CB" charge="0.1744"/>
+      <Atom name="C6" type="RNA-C" charge="0.477"/>
+      <Atom name="O6" type="RNA-O" charge="-0.5597"/>
+      <Atom name="N1" type="RNA-NA" charge="-0.5606"/>
+      <Atom name="H1" type="RNA-H" charge="0.4243"/>
+      <Atom name="C2" type="RNA-CA" charge="0.7657"/>
+      <Atom name="N2" type="RNA-N2" charge="-1.0158"/>
+      <Atom name="H21" type="RNA-H" charge="0.4607"/>
+      <Atom name="H22" type="RNA-H" charge="0.4607"/>
+      <Atom name="N3" type="RNA-NC" charge="-0.6323"/>
+      <Atom name="C4" type="RNA-CB" charge="0.1222"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OH" charge="-0.6541"/>
+      <Atom name="HO3'" type="RNA-HO" charge="0.4376"/>
+      <Bond atomName1="HO5'" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N9"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N9" atomName2="C8"/>
+      <Bond atomName1="N9" atomName2="C4"/>
+      <Bond atomName1="C8" atomName2="H8"/>
+      <Bond atomName1="C8" atomName2="N7"/>
+      <Bond atomName1="N7" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="C6"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C6" atomName2="O6"/>
+      <Bond atomName1="C6" atomName2="N1"/>
+      <Bond atomName1="N1" atomName2="H1"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="N2"/>
+      <Bond atomName1="C2" atomName2="N3"/>
+      <Bond atomName1="N2" atomName2="H21"/>
+      <Bond atomName1="N2" atomName2="H22"/>
+      <Bond atomName1="N3" atomName2="C4"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <Bond atomName1="O3'" atomName2="HO3'"/>
+    </Residue>
+    <Residue name="OHE">
+      <Atom name="HOP3" type="RNA-HO" charge="0.3129"/>
+      <Atom name="OP3" type="RNA-OH" charge="-0.621"/>
+      <Bond atomName1="HOP3" atomName2="OP3"/>
+      <ExternalBond atomName="OP3"/>
+    </Residue>
+    <Residue name="U">
+      <Atom name="P" type="RNA-P" charge="1.1662"/>
+      <Atom name="OP1" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="OP2" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="O5'" type="RNA-OR" charge="-0.4989"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0674"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.1824"/>
+      <Atom name="N1" type="RNA-N*" charge="0.0418"/>
+      <Atom name="C6" type="RNA-CS" charge="-0.1126"/>
+      <Atom name="H6" type="RNA-H4" charge="0.2188"/>
+      <Atom name="C5" type="RNA-CS" charge="-0.3635"/>
+      <Atom name="H5" type="RNA-HA" charge="0.1811"/>
+      <Atom name="C4" type="RNA-C" charge="0.5952"/>
+      <Atom name="O4" type="RNA-O" charge="-0.5761"/>
+      <Atom name="N3" type="RNA-NA" charge="-0.3913"/>
+      <Atom name="H3" type="RNA-H" charge="0.3518"/>
+      <Atom name="C2" type="RNA-C" charge="0.4687"/>
+      <Atom name="O2" type="RNA-O" charge="-0.5477"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OR" charge="-0.5246"/>
+      <Bond atomName1="P" atomName2="OP1"/>
+      <Bond atomName1="P" atomName2="OP2"/>
+      <Bond atomName1="P" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N1"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N1" atomName2="C6"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C6" atomName2="H6"/>
+      <Bond atomName1="C6" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="H5"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C4" atomName2="O4"/>
+      <Bond atomName1="C4" atomName2="N3"/>
+      <Bond atomName1="N3" atomName2="H3"/>
+      <Bond atomName1="N3" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="O2"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <ExternalBond atomName="P"/>
+      <ExternalBond atomName="O3'"/>
+    </Residue>
+    <Residue name="U3">
+      <Atom name="P" type="RNA-P" charge="1.1662"/>
+      <Atom name="OP1" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="OP2" type="RNA-OQ" charge="-0.776"/>
+      <Atom name="O5'" type="RNA-OR" charge="-0.4989"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0674"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.1824"/>
+      <Atom name="N1" type="RNA-N*" charge="0.0418"/>
+      <Atom name="C6" type="RNA-CS" charge="-0.1126"/>
+      <Atom name="H6" type="RNA-H4" charge="0.2188"/>
+      <Atom name="C5" type="RNA-CS" charge="-0.3635"/>
+      <Atom name="H5" type="RNA-HA" charge="0.1811"/>
+      <Atom name="C4" type="RNA-C" charge="0.5952"/>
+      <Atom name="O4" type="RNA-O" charge="-0.5761"/>
+      <Atom name="N3" type="RNA-NA" charge="-0.3913"/>
+      <Atom name="H3" type="RNA-H" charge="0.3518"/>
+      <Atom name="C2" type="RNA-C" charge="0.4687"/>
+      <Atom name="O2" type="RNA-O" charge="-0.5477"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OH" charge="-0.6541"/>
+      <Atom name="HO3'" type="RNA-HO" charge="0.4376"/>
+      <Bond atomName1="P" atomName2="OP1"/>
+      <Bond atomName1="P" atomName2="OP2"/>
+      <Bond atomName1="P" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N1"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N1" atomName2="C6"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C6" atomName2="H6"/>
+      <Bond atomName1="C6" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="H5"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C4" atomName2="O4"/>
+      <Bond atomName1="C4" atomName2="N3"/>
+      <Bond atomName1="N3" atomName2="H3"/>
+      <Bond atomName1="N3" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="O2"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <Bond atomName1="O3'" atomName2="HO3'"/>
+      <ExternalBond atomName="P"/>
+    </Residue>
+    <Residue name="U5">
+      <Atom name="HO5'" type="RNA-HO" charge="0.4295"/>
+      <Atom name="O5'" type="RNA-OH" charge="-0.6223"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0674"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.1824"/>
+      <Atom name="N1" type="RNA-N*" charge="0.0418"/>
+      <Atom name="C6" type="RNA-CS" charge="-0.1126"/>
+      <Atom name="H6" type="RNA-H4" charge="0.2188"/>
+      <Atom name="C5" type="RNA-CS" charge="-0.3635"/>
+      <Atom name="H5" type="RNA-HA" charge="0.1811"/>
+      <Atom name="C4" type="RNA-C" charge="0.5952"/>
+      <Atom name="O4" type="RNA-O" charge="-0.5761"/>
+      <Atom name="N3" type="RNA-NA" charge="-0.3913"/>
+      <Atom name="H3" type="RNA-H" charge="0.3518"/>
+      <Atom name="C2" type="RNA-C" charge="0.4687"/>
+      <Atom name="O2" type="RNA-O" charge="-0.5477"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OR" charge="-0.5246"/>
+      <Bond atomName1="HO5'" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N1"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N1" atomName2="C6"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C6" atomName2="H6"/>
+      <Bond atomName1="C6" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="H5"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C4" atomName2="O4"/>
+      <Bond atomName1="C4" atomName2="N3"/>
+      <Bond atomName1="N3" atomName2="H3"/>
+      <Bond atomName1="N3" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="O2"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <ExternalBond atomName="O3'"/>
+    </Residue>
+    <Residue name="UN">
+      <Atom name="HO5'" type="RNA-HO" charge="0.4295"/>
+      <Atom name="O5'" type="RNA-OH" charge="-0.6223"/>
+      <Atom name="C5'" type="RNA-CI" charge="0.0558"/>
+      <Atom name="H5'" type="RNA-H1" charge="0.0679"/>
+      <Atom name="H5''" type="RNA-H1" charge="0.0679"/>
+      <Atom name="C4'" type="RNA-CT" charge="0.1065"/>
+      <Atom name="H4'" type="RNA-H1" charge="0.1174"/>
+      <Atom name="O4'" type="RNA-OS" charge="-0.3548"/>
+      <Atom name="C1'" type="RNA-CT" charge="0.0674"/>
+      <Atom name="H1'" type="RNA-H2" charge="0.1824"/>
+      <Atom name="N1" type="RNA-N*" charge="0.0418"/>
+      <Atom name="C6" type="RNA-CS" charge="-0.1126"/>
+      <Atom name="H6" type="RNA-H4" charge="0.2188"/>
+      <Atom name="C5" type="RNA-CS" charge="-0.3635"/>
+      <Atom name="H5" type="RNA-HA" charge="0.1811"/>
+      <Atom name="C4" type="RNA-C" charge="0.5952"/>
+      <Atom name="O4" type="RNA-O" charge="-0.5761"/>
+      <Atom name="N3" type="RNA-NA" charge="-0.3913"/>
+      <Atom name="H3" type="RNA-H" charge="0.3518"/>
+      <Atom name="C2" type="RNA-C" charge="0.4687"/>
+      <Atom name="O2" type="RNA-O" charge="-0.5477"/>
+      <Atom name="C3'" type="RNA-CT" charge="0.2022"/>
+      <Atom name="H3'" type="RNA-H1" charge="0.0615"/>
+      <Atom name="C2'" type="RNA-CT" charge="0.067"/>
+      <Atom name="H2'" type="RNA-H1" charge="0.0972"/>
+      <Atom name="O2'" type="RNA-OH" charge="-0.6139"/>
+      <Atom name="HO2'" type="RNA-HO" charge="0.4186"/>
+      <Atom name="O3'" type="RNA-OH" charge="-0.6541"/>
+      <Atom name="HO3'" type="RNA-HO" charge="0.4376"/>
+      <Bond atomName1="HO5'" atomName2="O5'"/>
+      <Bond atomName1="O5'" atomName2="C5'"/>
+      <Bond atomName1="C5'" atomName2="H5'"/>
+      <Bond atomName1="C5'" atomName2="H5''"/>
+      <Bond atomName1="C5'" atomName2="C4'"/>
+      <Bond atomName1="C4'" atomName2="H4'"/>
+      <Bond atomName1="C4'" atomName2="O4'"/>
+      <Bond atomName1="C4'" atomName2="C3'"/>
+      <Bond atomName1="O4'" atomName2="C1'"/>
+      <Bond atomName1="C1'" atomName2="H1'"/>
+      <Bond atomName1="C1'" atomName2="N1"/>
+      <Bond atomName1="C1'" atomName2="C2'"/>
+      <Bond atomName1="N1" atomName2="C6"/>
+      <Bond atomName1="N1" atomName2="C2"/>
+      <Bond atomName1="C6" atomName2="H6"/>
+      <Bond atomName1="C6" atomName2="C5"/>
+      <Bond atomName1="C5" atomName2="H5"/>
+      <Bond atomName1="C5" atomName2="C4"/>
+      <Bond atomName1="C4" atomName2="O4"/>
+      <Bond atomName1="C4" atomName2="N3"/>
+      <Bond atomName1="N3" atomName2="H3"/>
+      <Bond atomName1="N3" atomName2="C2"/>
+      <Bond atomName1="C2" atomName2="O2"/>
+      <Bond atomName1="C3'" atomName2="H3'"/>
+      <Bond atomName1="C3'" atomName2="C2'"/>
+      <Bond atomName1="C3'" atomName2="O3'"/>
+      <Bond atomName1="C2'" atomName2="H2'"/>
+      <Bond atomName1="C2'" atomName2="O2'"/>
+      <Bond atomName1="O2'" atomName2="HO2'"/>
+      <Bond atomName1="O3'" atomName2="HO3'"/>
+    </Residue>
+  </Residues>
+  <HarmonicBondForce>
+    <Bond class1="HW" class2="HW" length="0.15136000000000002" k="462750.3999999999"/>
+    <Bond class1="C" class2="C" length="0.1525" k="259407.99999999994"/>
+    <Bond class1="C" class2="CA" length="0.1409" k="392459.19999999995"/>
+    <Bond class1="C" class2="CB" length="0.1419" k="374049.5999999999"/>
+    <Bond class1="C" class2="CS" length="0.1444" k="343087.99999999994"/>
+    <Bond class1="C" class2="CT" length="0.1522" k="265265.6"/>
+    <Bond class1="C" class2="N*" length="0.1383" k="354803.19999999995"/>
+    <Bond class1="C" class2="NA" length="0.1388" k="349782.3999999999"/>
+    <Bond class1="C" class2="NC" length="0.1358" k="382417.5999999999"/>
+    <Bond class1="C" class2="O" length="0.12290000000000001" k="476975.9999999999"/>
+    <Bond class1="C" class2="OH" length="0.13640000000000002" k="376559.99999999994"/>
+    <Bond class1="C" class2="OS" length="0.1323" k="376559.99999999994"/>
+    <Bond class1="C" class2="H4" length="0.10800000000000001" k="307105.5999999999"/>
+    <Bond class1="C" class2="H5" length="0.10800000000000001" k="307105.5999999999"/>
+    <Bond class1="CA" class2="CA" length="0.13999999999999999" k="392459.19999999995"/>
+    <Bond class1="CA" class2="CB" length="0.1404" k="392459.19999999995"/>
+    <Bond class1="CA" class2="CS" length="0.1433" k="357313.5999999999"/>
+    <Bond class1="CA" class2="CT" length="0.15100000000000002" k="265265.6"/>
+    <Bond class1="CA" class2="HA" length="0.10800000000000001" k="307105.5999999999"/>
+    <Bond class1="CA" class2="H4" length="0.10800000000000001" k="307105.5999999999"/>
+    <Bond class1="CA" class2="N2" length="0.134" k="402500.79999999993"/>
+    <Bond class1="CA" class2="NA" length="0.1381" k="357313.5999999999"/>
+    <Bond class1="CA" class2="NC" length="0.1339" k="404174.3999999999"/>
+    <Bond class1="CA" class2="OH" length="0.13640000000000002" k="376559.99999999994"/>
+    <Bond class1="CB" class2="CB" length="0.137" k="435135.99999999994"/>
+    <Bond class1="CB" class2="N*" length="0.13740000000000002" k="364844.79999999993"/>
+    <Bond class1="CB" class2="NB" length="0.1391" k="346435.19999999995"/>
+    <Bond class1="CB" class2="NC" length="0.13540000000000002" k="385764.79999999993"/>
+    <Bond class1="CP" class2="H5" length="0.10800000000000001" k="307105.5999999999"/>
+    <Bond class1="CP" class2="N*" length="0.1371" k="368191.99999999994"/>
+    <Bond class1="CP" class2="NB" length="0.13040000000000002" k="442667.1999999999"/>
+    <Bond class1="CS" class2="CS" length="0.135" k="459403.1999999999"/>
+    <Bond class1="CS" class2="CT" length="0.15100000000000002" k="265265.6"/>
+    <Bond class1="CS" class2="HA" length="0.10800000000000001" k="307105.5999999999"/>
+    <Bond class1="CS" class2="H4" length="0.10800000000000001" k="307105.5999999999"/>
+    <Bond class1="CS" class2="H5" length="0.10800000000000001" k="307105.5999999999"/>
+    <Bond class1="CS" class2="N*" length="0.1365" k="374886.3999999999"/>
+    <Bond class1="CS" class2="OS" length="0.124" k="401663.99999999994"/>
+    <Bond class1="CQ" class2="H5" length="0.10800000000000001" k="307105.5999999999"/>
+    <Bond class1="CQ" class2="NC" length="0.13240000000000002" k="420073.5999999999"/>
+    <Bond class1="CT" class2="CT" length="0.1526" k="259407.99999999994"/>
+    <Bond class1="CT" class2="H1" length="0.10900000000000001" k="284511.99999999994"/>
+    <Bond class1="CT" class2="H2" length="0.10900000000000001" k="284511.99999999994"/>
+    <Bond class1="CT" class2="N*" length="0.14750000000000002" k="282001.5999999999"/>
+    <Bond class1="CT" class2="N2" length="0.1463" k="282001.5999999999"/>
+    <Bond class1="CT" class2="OH" length="0.141" k="267775.99999999994"/>
+    <Bond class1="CT" class2="OS" length="0.141" k="267775.99999999994"/>
+    <Bond class1="OH" class2="P" length="0.16100000000000003" k="192463.99999999997"/>
+    <Bond class1="OS" class2="P" length="0.16100000000000003" k="192463.99999999997"/>
+    <Bond class1="NA" class2="P" length="0.18400000000000002" k="209199.99999999997"/>
+    <Bond class1="H" class2="N2" length="0.101" k="363171.19999999995"/>
+    <Bond class1="H" class2="N*" length="0.101" k="363171.19999999995"/>
+    <Bond class1="H" class2="NA" length="0.101" k="363171.19999999995"/>
+    <Bond class1="HO" class2="OH" length="0.096" k="462750.3999999999"/>
+    <Bond class1="HO" class2="OS" length="0.096" k="462750.3999999999"/>
+    <Bond class1="CI" class2="H1" length="0.10900000000000001" k="284511.99999999994"/>
+    <Bond class1="CI" class2="CT" length="0.1526" k="259407.99999999994"/>
+    <Bond class1="OS" class2="CI" length="0.141" k="267775.99999999994"/>
+    <Bond class1="OH" class2="CI" length="0.141" k="267775.99999999994"/>
+    <Bond class1="C5" class2="H5" length="0.10800000000000001" k="307105.5999999999"/>
+    <Bond class1="C5" class2="N*" length="0.1371" k="368191.99999999994"/>
+    <Bond class1="C5" class2="NB" length="0.13040000000000002" k="442667.1999999999"/>
+    <Bond class1="C" class2="C4" length="0.1444" k="343087.99999999994"/>
+    <Bond class1="CA" class2="C4" length="0.1433" k="357313.5999999999"/>
+    <Bond class1="C4" class2="C4" length="0.135" k="459403.1999999999"/>
+    <Bond class1="C4" class2="CT" length="0.15100000000000002" k="265265.6"/>
+    <Bond class1="C4" class2="HA" length="0.10800000000000001" k="307105.5999999999"/>
+    <Bond class1="C4" class2="H4" length="0.10800000000000001" k="307105.5999999999"/>
+    <Bond class1="C4" class2="N*" length="0.1365" k="374886.3999999999"/>
+    <Bond class1="CF" class2="CE" length="0.1404" k="392459.19999999995"/>
+    <Bond class1="CE" class2="CE" length="0.137" k="435135.99999999994"/>
+    <Bond class1="CE" class2="NR" length="0.13740000000000002" k="364844.79999999993"/>
+    <Bond class1="CB" class2="NR" length="0.13740000000000002" k="364844.79999999993"/>
+    <Bond class1="CE" class2="NB" length="0.1391" k="346435.19999999995"/>
+    <Bond class1="CE" class2="ND" length="0.13540000000000002" k="385764.79999999993"/>
+    <Bond class1="CF" class2="ND" length="0.1339" k="404174.3999999999"/>
+    <Bond class1="CQ" class2="ND" length="0.13240000000000002" k="420073.5999999999"/>
+    <Bond class1="CF" class2="N2" length="0.134" k="402500.79999999993"/>
+    <Bond class1="CP" class2="NR" length="0.1371" k="368191.99999999994"/>
+    <Bond class1="C5" class2="NR" length="0.1371" k="368191.99999999994"/>
+    <Bond class1="CT" class2="NR" length="0.14750000000000002" k="282001.5999999999"/>
+    <Bond class1="OQ" class2="P" length="0.148" k="439319.99999999994"/>
+    <Bond class1="OR" class2="P" length="0.16100000000000003" k="192463.99999999997"/>
+    <Bond class1="OR" class2="CI" length="0.141" k="267775.99999999994"/>
+    <Bond class1="CT" class2="OR" length="0.141" k="267775.99999999994"/>
+  </HarmonicBondForce>
+  <HarmonicAngleForce>
+    <Angle class1="C" class2="C" class3="O" angle="2.0943951023931953" k="669.44"/>
+    <Angle class1="C" class2="C" class3="OH" angle="2.0943951023931953" k="669.44"/>
+    <Angle class1="CA" class2="C" class3="CA" angle="2.0943951023931953" k="527.184"/>
+    <Angle class1="CA" class2="C" class3="OH" angle="2.0943951023931953" k="585.76"/>
+    <Angle class1="CA" class2="C" class3="OS" angle="2.0943951023931953" k="585.76"/>
+    <Angle class1="CB" class2="C" class3="NA" angle="1.9425514574696887" k="585.76"/>
+    <Angle class1="CB" class2="C" class3="O" angle="2.2479840765686965" k="669.44"/>
+    <Angle class1="CS" class2="C" class3="NA" angle="1.99142067652553" k="585.76"/>
+    <Angle class1="CS" class2="C" class3="O" angle="2.1868975527488947" k="669.44"/>
+    <Angle class1="CT" class2="C" class3="O" angle="2.101376419401173" k="669.44"/>
+    <Angle class1="CT" class2="C" class3="CT" angle="2.0420352248333655" k="527.184"/>
+    <Angle class1="CT" class2="C" class3="OS" angle="2.007128639793479" k="669.44"/>
+    <Angle class1="CT" class2="C" class3="OH" angle="1.9198621771937625" k="669.44"/>
+    <Angle class1="N*" class2="C" class3="NA" angle="2.014109956801456" k="585.76"/>
+    <Angle class1="N*" class2="C" class3="NC" angle="2.069960492865275" k="585.76"/>
+    <Angle class1="N*" class2="C" class3="O" angle="2.1101030656611446" k="669.44"/>
+    <Angle class1="NA" class2="C" class3="O" angle="2.1048670779051615" k="669.44"/>
+    <Angle class1="NC" class2="C" class3="O" angle="2.138028333693054" k="669.44"/>
+    <Angle class1="O" class2="C" class3="O" angle="2.199114857512855" k="669.44"/>
+    <Angle class1="O" class2="C" class3="OH" angle="2.0943951023931953" k="669.44"/>
+    <Angle class1="O" class2="C" class3="OS" angle="2.181661564992912" k="669.44"/>
+    <Angle class1="H4" class2="C" class3="C" angle="2.0943951023931953" k="418.40000000000003"/>
+    <Angle class1="H4" class2="C" class3="CS" angle="2.007128639793479" k="418.40000000000003"/>
+    <Angle class1="H4" class2="C" class3="CT" angle="2.007128639793479" k="418.40000000000003"/>
+    <Angle class1="H4" class2="C" class3="O" angle="2.0943951023931953" k="418.40000000000003"/>
+    <Angle class1="H4" class2="C" class3="OH" angle="2.0943951023931953" k="418.40000000000003"/>
+    <Angle class1="H5" class2="C" class3="O" angle="2.076941809873252" k="418.40000000000003"/>
+    <Angle class1="H5" class2="C" class3="OH" angle="1.8675022996339325" k="418.40000000000003"/>
+    <Angle class1="H5" class2="C" class3="OS" angle="1.8675022996339325" k="418.40000000000003"/>
+    <Angle class1="C" class2="CA" class3="CA" angle="2.0943951023931953" k="527.184"/>
+    <Angle class1="C" class2="CA" class3="HA" angle="2.0943951023931953" k="418.40000000000003"/>
+    <Angle class1="CA" class2="CA" class3="CA" angle="2.0943951023931953" k="527.184"/>
+    <Angle class1="CA" class2="CA" class3="CB" angle="2.0943951023931953" k="527.184"/>
+    <Angle class1="CA" class2="CA" class3="CT" angle="2.0943951023931953" k="585.76"/>
+    <Angle class1="CA" class2="CA" class3="HA" angle="2.0943951023931953" k="418.40000000000003"/>
+    <Angle class1="CA" class2="CA" class3="H4" angle="2.0943951023931953" k="418.40000000000003"/>
+    <Angle class1="CA" class2="CA" class3="OH" angle="2.0943951023931953" k="585.76"/>
+    <Angle class1="CB" class2="CA" class3="HA" angle="2.0943951023931953" k="418.40000000000003"/>
+    <Angle class1="CB" class2="CA" class3="H4" angle="2.0943951023931953" k="418.40000000000003"/>
+    <Angle class1="CB" class2="CA" class3="N2" angle="2.155481626212997" k="585.76"/>
+    <Angle class1="CB" class2="CA" class3="NC" angle="2.0472712125893486" k="585.76"/>
+    <Angle class1="CS" class2="CA" class3="N2" angle="2.0961404316451895" k="585.76"/>
+    <Angle class1="CS" class2="CA" class3="NC" angle="2.1205750411731104" k="585.76"/>
+    <Angle class1="NA" class2="CA" class3="NC" angle="2.151990967709008" k="585.76"/>
+    <Angle class1="N2" class2="CA" class3="NA" angle="2.0245819323134224" k="585.76"/>
+    <Angle class1="N2" class2="CA" class3="NC" angle="2.0821777976292353" k="585.76"/>
+    <Angle class1="N2" class2="CA" class3="N2" angle="2.0943951023931953" k="585.76"/>
+    <Angle class1="C" class2="CB" class3="CB" angle="2.080432468377241" k="527.184"/>
+    <Angle class1="C" class2="CB" class3="NB" angle="2.2689280275926285" k="585.76"/>
+    <Angle class1="CA" class2="CB" class3="CB" angle="2.0472712125893486" k="527.184"/>
+    <Angle class1="CA" class2="CB" class3="NB" angle="2.3108159296404924" k="585.76"/>
+    <Angle class1="CB" class2="CB" class3="N*" angle="1.8535396656179781" k="585.76"/>
+    <Angle class1="CB" class2="CB" class3="NB" angle="1.9268434942017398" k="585.76"/>
+    <Angle class1="CB" class2="CB" class3="NC" angle="2.2287854547967587" k="585.76"/>
+    <Angle class1="N*" class2="CB" class3="NC" angle="2.202605516016844" k="585.76"/>
+    <Angle class1="H5" class2="CP" class3="N*" angle="2.1476276445790226" k="418.40000000000003"/>
+    <Angle class1="H5" class2="CP" class3="NB" angle="2.1476276445790226" k="418.40000000000003"/>
+    <Angle class1="N*" class2="CP" class3="NB" angle="1.9879300180215413" k="585.76"/>
+    <Angle class1="C" class2="CS" class3="CS" angle="2.1066124071571557" k="527.184"/>
+    <Angle class1="C" class2="CS" class3="CT" angle="2.0891591146372126" k="585.76"/>
+    <Angle class1="C" class2="CS" class3="HA" angle="2.0891591146372126" k="418.40000000000003"/>
+    <Angle class1="C" class2="CS" class3="H4" angle="2.0891591146372126" k="418.40000000000003"/>
+    <Angle class1="CA" class2="CS" class3="CS" angle="2.0420352248333655" k="527.184"/>
+    <Angle class1="CA" class2="CS" class3="HA" angle="2.151990967709008" k="418.40000000000003"/>
+    <Angle class1="CA" class2="CS" class3="H4" angle="2.151990967709008" k="418.40000000000003"/>
+    <Angle class1="CS" class2="CS" class3="HA" angle="2.0891591146372126" k="418.40000000000003"/>
+    <Angle class1="CS" class2="CS" class3="H4" angle="2.0891591146372126" k="418.40000000000003"/>
+    <Angle class1="CS" class2="CS" class3="N*" angle="2.1153390534171272" k="585.76"/>
+    <Angle class1="CS" class2="CS" class3="OS" angle="2.181661564992912" k="669.44"/>
+    <Angle class1="H4" class2="CS" class3="N*" angle="2.0786871391252464" k="418.40000000000003"/>
+    <Angle class1="H4" class2="CS" class3="OS" angle="1.9722220547535925" k="418.40000000000003"/>
+    <Angle class1="HA" class2="CS" class3="HA" angle="2.0943951023931953" k="292.88"/>
+    <Angle class1="HA" class2="CS" class3="CT" angle="2.0943951023931953" k="418.40000000000003"/>
+    <Angle class1="NC" class2="CQ" class3="NC" angle="2.253220064324679" k="585.76"/>
+    <Angle class1="H5" class2="CQ" class3="NC" angle="2.0149826214274533" k="418.40000000000003"/>
+    <Angle class1="H1" class2="CT" class3="H1" angle="1.911135530933791" k="292.88"/>
+    <Angle class1="H1" class2="CT" class3="N*" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="H1" class2="CT" class3="OH" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="H1" class2="CT" class3="OS" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="H1" class2="CT" class3="CS" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="H1" class2="CT" class3="N2" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="H2" class2="CT" class3="H2" angle="1.911135530933791" k="292.88"/>
+    <Angle class1="H2" class2="CT" class3="N*" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="H2" class2="CT" class3="OS" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="C" class2="CT" class3="H1" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="C" class2="CT" class3="CT" angle="1.9390607989657" k="527.184"/>
+    <Angle class1="C" class2="CT" class3="OS" angle="1.911135530933791" k="502.08000000000004"/>
+    <Angle class1="CS" class2="CT" class3="CT" angle="1.9373154697137058" k="527.184"/>
+    <Angle class1="CS" class2="CT" class3="OS" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="CT" class2="CT" class3="CT" angle="1.911135530933791" k="334.72"/>
+    <Angle class1="CT" class2="CT" class3="H1" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="CT" class2="CT" class3="H2" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="CT" class2="CT" class3="N*" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="CT" class2="CT" class3="OH" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="CT" class2="CT" class3="OS" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="CT" class2="CT" class3="CA" angle="1.9896753472735358" k="527.184"/>
+    <Angle class1="CT" class2="CT" class3="N2" angle="1.9408061282176945" k="669.44"/>
+    <Angle class1="OS" class2="CT" class3="OS" angle="1.7627825445142729" k="1338.88"/>
+    <Angle class1="OS" class2="CT" class3="N*" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="C" class2="N*" class3="CS" angle="2.1223203704251046" k="585.76"/>
+    <Angle class1="C" class2="N*" class3="CT" angle="2.0525072003453313" k="585.76"/>
+    <Angle class1="C" class2="N*" class3="H" angle="2.080432468377241" k="418.40000000000003"/>
+    <Angle class1="CB" class2="N*" class3="CP" angle="1.8395770316020235" k="585.76"/>
+    <Angle class1="CB" class2="N*" class3="CT" angle="2.1956241990088667" k="585.76"/>
+    <Angle class1="CB" class2="N*" class3="H" angle="2.1956241990088667" k="418.40000000000003"/>
+    <Angle class1="CP" class2="N*" class3="CT" angle="2.2479840765686965" k="585.76"/>
+    <Angle class1="CP" class2="N*" class3="H" angle="2.2479840765686965" k="418.40000000000003"/>
+    <Angle class1="CS" class2="N*" class3="CT" angle="2.1153390534171272" k="585.76"/>
+    <Angle class1="CS" class2="N*" class3="H" angle="2.1153390534171272" k="418.40000000000003"/>
+    <Angle class1="CA" class2="N2" class3="H" angle="2.0943951023931953" k="418.40000000000003"/>
+    <Angle class1="CA" class2="N2" class3="CT" angle="2.150245638457014" k="418.40000000000003"/>
+    <Angle class1="CT" class2="N2" class3="H" angle="2.0664698343612864" k="418.40000000000003"/>
+    <Angle class1="H" class2="N2" class3="H" angle="2.0943951023931953" k="292.88"/>
+    <Angle class1="C" class2="NA" class3="C" angle="2.2060961745208325" k="585.76"/>
+    <Angle class1="C" class2="NA" class3="CA" angle="2.1851522234969005" k="585.76"/>
+    <Angle class1="C" class2="NA" class3="H" angle="2.038544566329377" k="418.40000000000003"/>
+    <Angle class1="CA" class2="NA" class3="H" angle="2.059488517353309" k="418.40000000000003"/>
+    <Angle class1="CB" class2="NB" class3="CP" angle="1.811651763570114" k="585.76"/>
+    <Angle class1="C" class2="NC" class3="CA" angle="2.1031217486531673" k="585.76"/>
+    <Angle class1="CA" class2="NC" class3="CB" angle="1.9582594207376378" k="585.76"/>
+    <Angle class1="CA" class2="NC" class3="CQ" angle="2.069960492865275" k="585.76"/>
+    <Angle class1="CB" class2="NC" class3="CQ" angle="1.9373154697137058" k="585.76"/>
+    <Angle class1="C" class2="OH" class3="HO" angle="1.9722220547535925" k="418.40000000000003"/>
+    <Angle class1="CA" class2="OH" class3="HO" angle="1.9722220547535925" k="418.40000000000003"/>
+    <Angle class1="CT" class2="OH" class3="HO" angle="1.8936822384138476" k="460.24"/>
+    <Angle class1="HO" class2="OH" class3="P" angle="1.8936822384138476" k="376.56"/>
+    <Angle class1="C" class2="OS" class3="CT" angle="2.0420352248333655" k="502.08000000000004"/>
+    <Angle class1="CS" class2="OS" class3="CT" angle="2.0420352248333655" k="502.08000000000004"/>
+    <Angle class1="CT" class2="OS" class3="CT" angle="1.911135530933791" k="502.08000000000004"/>
+    <Angle class1="CT" class2="OS" class3="P" angle="2.1031217486531673" k="836.8000000000001"/>
+    <Angle class1="C" class2="OS" class3="P" angle="2.1031217486531673" k="836.8000000000001"/>
+    <Angle class1="P" class2="OS" class3="P" angle="2.1031217486531673" k="836.8000000000001"/>
+    <Angle class1="OH" class2="P" class3="OS" angle="1.790707812546182" k="376.56"/>
+    <Angle class1="OS" class2="P" class3="OS" angle="1.790707812546182" k="376.56"/>
+    <Angle class1="H1" class2="CI" class3="CT" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="H1" class2="CI" class3="H1" angle="1.911135530933791" k="292.88"/>
+    <Angle class1="CI" class2="CT" class3="H1" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="CI" class2="CT" class3="OS" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="CI" class2="CT" class3="CT" angle="1.911135530933791" k="334.72"/>
+    <Angle class1="OS" class2="CI" class3="H1" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="OS" class2="CI" class3="CT" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="P" class2="OS" class3="CI" angle="2.1031217486531673" k="836.8000000000001"/>
+    <Angle class1="OH" class2="CI" class3="H1" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="OH" class2="CI" class3="CT" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="HO" class2="OH" class3="CI" angle="1.8936822384138476" k="460.24"/>
+    <Angle class1="H5" class2="C5" class3="N*" angle="2.1476276445790226" k="418.40000000000003"/>
+    <Angle class1="H5" class2="C5" class3="NB" angle="2.1476276445790226" k="418.40000000000003"/>
+    <Angle class1="N*" class2="C5" class3="NB" angle="1.9879300180215413" k="585.76"/>
+    <Angle class1="CB" class2="N*" class3="C5" angle="1.8395770316020235" k="585.76"/>
+    <Angle class1="C5" class2="N*" class3="CT" angle="2.2479840765686965" k="585.76"/>
+    <Angle class1="CB" class2="NB" class3="C5" angle="1.811651763570114" k="585.76"/>
+    <Angle class1="C4" class2="C" class3="NA" angle="1.99142067652553" k="585.76"/>
+    <Angle class1="C4" class2="C" class3="O" angle="2.1868975527488947" k="669.44"/>
+    <Angle class1="C4" class2="CA" class3="N2" angle="2.0961404316451895" k="585.76"/>
+    <Angle class1="C4" class2="CA" class3="NC" angle="2.1205750411731104" k="585.76"/>
+    <Angle class1="C" class2="C4" class3="C4" angle="2.1066124071571557" k="527.184"/>
+    <Angle class1="C" class2="C4" class3="CT" angle="2.0891591146372126" k="585.76"/>
+    <Angle class1="C" class2="C4" class3="HA" angle="2.0891591146372126" k="418.40000000000003"/>
+    <Angle class1="C" class2="C4" class3="H4" angle="2.0891591146372126" k="418.40000000000003"/>
+    <Angle class1="CA" class2="C4" class3="C4" angle="2.0420352248333655" k="527.184"/>
+    <Angle class1="CA" class2="C4" class3="HA" angle="2.151990967709008" k="418.40000000000003"/>
+    <Angle class1="CA" class2="C4" class3="H4" angle="2.151990967709008" k="418.40000000000003"/>
+    <Angle class1="C4" class2="C4" class3="CT" angle="2.0891591146372126" k="585.76"/>
+    <Angle class1="C4" class2="C4" class3="HA" angle="2.0891591146372126" k="418.40000000000003"/>
+    <Angle class1="C4" class2="C4" class3="H4" angle="2.0891591146372126" k="418.40000000000003"/>
+    <Angle class1="C4" class2="C4" class3="N*" angle="2.1153390534171272" k="585.76"/>
+    <Angle class1="H4" class2="C4" class3="N*" angle="2.0786871391252464" k="418.40000000000003"/>
+    <Angle class1="H1" class2="CT" class3="C4" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="C" class2="N*" class3="C4" angle="2.1223203704251046" k="585.76"/>
+    <Angle class1="C4" class2="N*" class3="CT" angle="2.1153390534171272" k="585.76"/>
+    <Angle class1="CE" class2="CF" class3="N2" angle="2.155481626212997" k="585.76"/>
+    <Angle class1="CE" class2="CF" class3="ND" angle="2.0472712125893486" k="585.76"/>
+    <Angle class1="N2" class2="CF" class3="ND" angle="2.0821777976292353" k="585.76"/>
+    <Angle class1="CF" class2="CE" class3="CE" angle="2.0472712125893486" k="527.184"/>
+    <Angle class1="CF" class2="CE" class3="NB" angle="2.3108159296404924" k="585.76"/>
+    <Angle class1="CE" class2="CE" class3="NR" angle="1.8535396656179781" k="585.76"/>
+    <Angle class1="CB" class2="CB" class3="NR" angle="1.8535396656179781" k="585.76"/>
+    <Angle class1="CE" class2="CE" class3="NB" angle="1.9268434942017398" k="585.76"/>
+    <Angle class1="CE" class2="CE" class3="ND" angle="2.2287854547967587" k="585.76"/>
+    <Angle class1="NR" class2="CE" class3="ND" angle="2.202605516016844" k="585.76"/>
+    <Angle class1="NR" class2="CB" class3="NC" angle="2.202605516016844" k="585.76"/>
+    <Angle class1="H5" class2="C5" class3="NR" angle="2.1476276445790226" k="418.40000000000003"/>
+    <Angle class1="H5" class2="CP" class3="NR" angle="2.1476276445790226" k="418.40000000000003"/>
+    <Angle class1="NR" class2="CP" class3="NB" angle="1.9879300180215413" k="585.76"/>
+    <Angle class1="NR" class2="C5" class3="NB" angle="1.9879300180215413" k="585.76"/>
+    <Angle class1="ND" class2="CQ" class3="ND" angle="2.253220064324679" k="585.76"/>
+    <Angle class1="H5" class2="CQ" class3="ND" angle="2.0149826214274533" k="418.40000000000003"/>
+    <Angle class1="H1" class2="CT" class3="NR" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="OS" class2="CT" class3="NR" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="CT" class2="CT" class3="NR" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="CB" class2="NR" class3="CP" angle="1.8395770316020235" k="585.76"/>
+    <Angle class1="CB" class2="NR" class3="CT" angle="2.1956241990088667" k="585.76"/>
+    <Angle class1="CE" class2="NR" class3="CT" angle="2.1956241990088667" k="585.76"/>
+    <Angle class1="CE" class2="ND" class3="CQ" angle="1.9373154697137058" k="585.76"/>
+    <Angle class1="CE" class2="NR" class3="C5" angle="1.8395770316020235" k="585.76"/>
+    <Angle class1="CE" class2="NB" class3="C5" angle="1.811651763570114" k="585.76"/>
+    <Angle class1="C5" class2="NR" class3="CT" angle="2.2479840765686965" k="585.76"/>
+    <Angle class1="CP" class2="NR" class3="CT" angle="2.2479840765686965" k="585.76"/>
+    <Angle class1="CF" class2="ND" class3="CQ" angle="2.069960492865275" k="585.76"/>
+    <Angle class1="CF" class2="N2" class3="H" angle="2.0943951023931953" k="418.40000000000003"/>
+    <Angle class1="OQ" class2="P" class3="OQ" angle="2.092649773141201" k="1171.52"/>
+    <Angle class1="OQ" class2="P" class3="OR" angle="1.888969849433463" k="836.8000000000001"/>
+    <Angle class1="OR" class2="P" class3="OR" angle="1.790707812546182" k="376.56"/>
+    <Angle class1="CT" class2="OR" class3="P" angle="2.1031217486531673" k="836.8000000000001"/>
+    <Angle class1="OR" class2="CI" class3="H1" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="OR" class2="CI" class3="CT" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="P" class2="OR" class3="CI" angle="2.1031217486531673" k="836.8000000000001"/>
+    <Angle class1="CT" class2="CT" class3="OR" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="H1" class2="CT" class3="OR" angle="1.911135530933791" k="418.40000000000003"/>
+    <Angle class1="H2" class2="CT" class3="NR" angle="1.911135530933791" k="418.40000000000003"/>
+  </HarmonicAngleForce>
+  <PeriodicTorsionForce ordering="amber">
+    <Proper class1="" class2="C" class3="C" class4="" periodicity1="2" phase1="3.141592653589793" k1="15.167"/>
+    <Proper class1="" class2="C" class3="CA" class4="" periodicity1="2" phase1="3.141592653589793" k1="15.167"/>
+    <Proper class1="" class2="C" class3="CB" class4="" periodicity1="2" phase1="3.141592653589793" k1="12.552"/>
+    <Proper class1="" class2="C" class3="CS" class4="" periodicity1="2" phase1="3.141592653589793" k1="9.1002"/>
+    <Proper class1="" class2="C" class3="CT" class4="" periodicity1="2" phase1="0.0" k1="0.0"/>
+    <Proper class1="" class2="C" class3="N*" class4="" periodicity1="2" phase1="3.141592653589793" k1="6.0668"/>
+    <Proper class1="" class2="C" class3="NA" class4="" periodicity1="2" phase1="3.141592653589793" k1="5.6484000000000005"/>
+    <Proper class1="" class2="C" class3="NC" class4="" periodicity1="2" phase1="3.141592653589793" k1="16.736"/>
+    <Proper class1="" class2="C" class3="O" class4="" periodicity1="2" phase1="3.141592653589793" k1="11.7152"/>
+    <Proper class1="" class2="C" class3="OH" class4="" periodicity1="2" phase1="3.141592653589793" k1="9.623199999999999"/>
+    <Proper class1="" class2="C" class3="OS" class4="" periodicity1="2" phase1="3.141592653589793" k1="11.296800000000001"/>
+    <Proper class1="" class2="CA" class3="CA" class4="" periodicity1="2" phase1="3.141592653589793" k1="15.167"/>
+    <Proper class1="" class2="CA" class3="CB" class4="" periodicity1="2" phase1="3.141592653589793" k1="14.644"/>
+    <Proper class1="" class2="CA" class3="CS" class4="" periodicity1="2" phase1="3.141592653589793" k1="10.6692"/>
+    <Proper class1="" class2="CA" class3="CT" class4="" periodicity1="2" phase1="0.0" k1="0.0"/>
+    <Proper class1="" class2="CA" class3="N2" class4="" periodicity1="2" phase1="3.141592653589793" k1="10.0416"/>
+    <Proper class1="" class2="CA" class3="NA" class4="" periodicity1="2" phase1="3.141592653589793" k1="6.276"/>
+    <Proper class1="" class2="CA" class3="NC" class4="" periodicity1="2" phase1="3.141592653589793" k1="20.0832"/>
+    <Proper class1="" class2="CA" class3="OH" class4="" periodicity1="2" phase1="3.141592653589793" k1="3.7656"/>
+    <Proper class1="" class2="CB" class3="CB" class4="" periodicity1="2" phase1="3.141592653589793" k1="22.8028"/>
+    <Proper class1="" class2="CB" class3="N*" class4="" periodicity1="2" phase1="3.141592653589793" k1="6.9036"/>
+    <Proper class1="" class2="CB" class3="NB" class4="" periodicity1="2" phase1="3.141592653589793" k1="10.6692"/>
+    <Proper class1="" class2="CB" class3="NC" class4="" periodicity1="2" phase1="3.141592653589793" k1="17.3636"/>
+    <Proper class1="" class2="CP" class3="N*" class4="" periodicity1="2" phase1="3.141592653589793" k1="7.1128"/>
+    <Proper class1="" class2="CP" class3="NB" class4="" periodicity1="2" phase1="3.141592653589793" k1="41.84"/>
+    <Proper class1="" class2="CS" class3="CS" class4="" periodicity1="2" phase1="3.141592653589793" k1="27.823600000000003"/>
+    <Proper class1="" class2="CS" class3="CT" class4="" periodicity1="3" phase1="0.0" k1="0.0"/>
+    <Proper class1="" class2="CS" class3="N*" class4="" periodicity1="2" phase1="3.141592653589793" k1="7.740400000000001"/>
+    <Proper class1="" class2="CS" class3="OS" class4="" periodicity1="2" phase1="3.141592653589793" k1="4.3932"/>
+    <Proper class1="" class2="CQ" class3="NC" class4="" periodicity1="2" phase1="3.141592653589793" k1="28.4512"/>
+    <Proper class1="" class2="CT" class3="CT" class4="" periodicity1="3" phase1="0.0" k1="0.6508444444444444"/>
+    <Proper class1="" class2="CT" class3="N*" class4="" periodicity1="2" phase1="0.0" k1="0.0"/>
+    <Proper class1="" class2="CT" class3="N2" class4="" periodicity1="3" phase1="0.0" k1="0.0"/>
+    <Proper class1="" class2="CT" class3="OH" class4="" periodicity1="3" phase1="0.0" k1="0.6973333333333334"/>
+    <Proper class1="" class2="CT" class3="OS" class4="" periodicity1="3" phase1="0.0" k1="1.6038666666666666"/>
+    <Proper class1="" class2="OH" class3="P" class4="" periodicity1="3" phase1="0.0" k1="1.046"/>
+    <Proper class1="" class2="OS" class3="P" class4="" periodicity1="3" phase1="0.0" k1="1.046"/>
+    <Proper class1="" class2="CI" class3="OS" class4="" periodicity1="3" phase1="0.0" k1="1.6038666666666666"/>
+    <Proper class1="" class2="CI" class3="OH" class4="" periodicity1="3" phase1="0.0" k1="0.6973333333333334"/>
+    <Proper class1="" class2="CI" class3="CT" class4="" periodicity1="3" phase1="0.0" k1="0.6508444444444444"/>
+    <Proper class1="" class2="C5" class3="N*" class4="" periodicity1="2" phase1="3.141592653589793" k1="7.1128"/>
+    <Proper class1="" class2="C5" class3="NB" class4="" periodicity1="2" phase1="3.141592653589793" k1="41.84"/>
+    <Proper class1="" class2="C" class3="C4" class4="" periodicity1="2" phase1="3.141592653589793" k1="9.1002"/>
+    <Proper class1="" class2="CA" class3="C4" class4="" periodicity1="2" phase1="3.141592653589793" k1="10.6692"/>
+    <Proper class1="" class2="C4" class3="C4" class4="" periodicity1="2" phase1="3.141592653589793" k1="27.823600000000003"/>
+    <Proper class1="" class2="C4" class3="CT" class4="" periodicity1="3" phase1="0.0" k1="0.0"/>
+    <Proper class1="" class2="C4" class3="N*" class4="" periodicity1="2" phase1="3.141592653589793" k1="7.740400000000001"/>
+    <Proper class1="CT" class2="OS" class3="CT" class4="CI" periodicity1="3" phase1="0.0" k1="1.6024720000000001" periodicity2="2" phase2="3.141592653589793" k2="0.41840000000000005"/>
+    <Proper class1="H1" class2="CI" class3="CT" class4="OS" periodicity1="3" phase1="0.0" k1="0.0" periodicity2="1" phase2="0.0" k2="1.046"/>
+    <Proper class1="H1" class2="CI" class3="CT" class4="OH" periodicity1="3" phase1="0.0" k1="0.0" periodicity2="1" phase2="0.0" k2="1.046"/>
+    <Proper class1="H1" class2="CT" class3="CI" class4="OS" periodicity1="3" phase1="0.0" k1="0.0" periodicity2="1" phase2="0.0" k2="1.046"/>
+    <Proper class1="H1" class2="CT" class3="CI" class4="OH" periodicity1="3" phase1="0.0" k1="0.0" periodicity2="1" phase2="0.0" k2="1.046"/>
+    <Proper class1="CI" class2="CT" class3="CT" class4="CT" periodicity1="3" phase1="0.0" k1="0.75312" periodicity2="2" phase2="3.141592653589793" k2="1.046" periodicity3="1" phase3="3.141592653589793" k3="0.8368000000000001"/>
+    <Proper class1="OS" class2="P" class3="OS" class4="CI" periodicity1="1" phase1="0.5549288319349986" k1="0.7747973040000001" periodicity2="2" phase2="6.142853854002235" k2="5.257325704" periodicity3="3" phase3="6.235144770452592" k3="1.484725872"/>
+    <Proper class1="OH" class2="P" class3="OS" class4="CI" periodicity1="1" phase1="0.5549288319349986" k1="0.7747973040000001" periodicity2="2" phase2="6.142853854002235" k2="5.257325704" periodicity3="3" phase3="6.235144770452592" k3="1.484725872"/>
+    <Proper class1="CT" class2="CT" class3="CI" class4="OS" periodicity1="1" phase1="3.3331692425337263" k1="4.92891936" periodicity2="2" phase2="5.159765562356967" k2="0.385354768" periodicity3="3" phase3="6.0754099683820435" k3="4.02848072"/>
+    <Proper class1="CT" class2="CT" class3="CI" class4="OH" periodicity1="1" phase1="2.088984581712013" k1="1.5060182480000002" periodicity2="2" phase2="4.783947479716458" k2="5.138152832" periodicity3="3" phase3="5.972691233249795" k3="3.267687264"/>
+    <Proper class1="C4" class2="C4" class3="C" class4="O" periodicity1="2" phase1="3.141592653589793" k1="9.1002" periodicity2="3" phase2="0.0" k2="1.2552"/>
+    <Proper class1="OS" class2="CT" class3="N*" class4="C5" periodicity1="1" phase1="1.2006154831054032" k1="4.04011224" periodicity2="2" phase2="0.27289968184183333" k2="4.49374152" periodicity3="3" phase3="2.9946132412915945" k3="1.91434736" periodicity4="4" phase4="0.33322000612000935" k4="1.29356728"/>
+    <Proper class1="OS" class2="CT" class3="N*" class4="CP" periodicity1="1" phase1="1.3047348449623768" k1="2.9501383999999997" periodicity2="2" phase2="0.1087095777897188" k2="4.4578846400000005" periodicity3="3" phase3="2.9435030194761924" k3="1.85238232" periodicity4="4" phase4="0.06936985644976662" k4="1.0711876800000002"/>
+    <Proper class1="OS" class2="CT" class3="N*" class4="C4" periodicity1="1" phase1="1.9404570623672956" k1="2.839710088" periodicity2="2" phase2="5.938133714060307" k2="5.000022256" periodicity3="3" phase3="3.633775502652194" k3="3.734998224" periodicity4="4" phase4="3.0557224543916726" k4="1.29773036"/>
+    <Proper class1="OS" class2="CT" class3="N*" class4="CS" periodicity1="1" phase1="2.5736625149908385" k1="2.5402277360000003" periodicity2="2" phase2="6.046169594758757" k2="5.428806944" periodicity3="3" phase3="3.807086697375231" k3="2.091380768" periodicity4="4" phase4="2.9321531433504737" k4="0.6909206560000001"/>
+    <Proper class1="OH" class2="P" class3="OS" class4="CT" periodicity1="3" phase1="0.0" k1="1.046" periodicity2="2" phase2="0.0" k2="5.0208"/>
+    <Proper class1="OS" class2="P" class3="OS" class4="CT" periodicity1="3" phase1="0.0" k1="1.046" periodicity2="2" phase2="0.0" k2="5.0208"/>
+    <Proper class1="H1" class2="CT" class3="C" class4="O" periodicity1="1" phase1="0.0" k1="3.3472000000000004" periodicity2="2" phase2="0.0" k2="0.0" periodicity3="3" phase3="3.141592653589793" k3="0.33472"/>
+    <Proper class1="HO" class2="OH" class3="CT" class4="CT" periodicity1="3" phase1="0.0" k1="0.66944" periodicity2="1" phase2="0.0" k2="1.046"/>
+    <Proper class1="HO" class2="OH" class3="C" class4="O" periodicity1="2" phase1="3.141592653589793" k1="9.623199999999999" periodicity2="1" phase2="0.0" k2="7.9496"/>
+    <Proper class1="CS" class2="CS" class3="C" class4="O" periodicity1="2" phase1="3.141592653589793" k1="9.1002" periodicity2="3" phase2="0.0" k2="1.2552"/>
+    <Proper class1="CT" class2="CS" class3="CS" class4="CT" periodicity1="2" phase1="3.141592653589793" k1="27.823600000000003" periodicity2="1" phase2="3.141592653589793" k2="7.9496"/>
+    <Proper class1="CT" class2="CT" class3="CT" class4="CT" periodicity1="3" phase1="0.0" k1="0.75312" periodicity2="2" phase2="3.141592653589793" k2="1.046" periodicity3="1" phase3="3.141592653589793" k3="0.8368000000000001"/>
+    <Proper class1="CT" class2="CT" class3="OS" class4="CT" periodicity1="3" phase1="0.0" k1="1.6024720000000001" periodicity2="2" phase2="3.141592653589793" k2="0.41840000000000005"/>
+    <Proper class1="CT" class2="CT" class3="OS" class4="C" periodicity1="3" phase1="0.0" k1="1.6024720000000001" periodicity2="1" phase2="3.141592653589793" k2="3.3472000000000004"/>
+    <Proper class1="CT" class2="OS" class3="CT" class4="OS" periodicity1="3" phase1="0.0" k1="0.41840000000000005" periodicity2="2" phase2="3.141592653589793" k2="3.5564" periodicity3="1" phase3="3.141592653589793" k3="5.6484000000000005"/>
+    <Proper class1="CT" class2="OS" class3="CT" class4="N*" periodicity1="3" phase1="0.0" k1="1.6024720000000001" periodicity2="2" phase2="0.0" k2="2.7196000000000002"/>
+    <Proper class1="O" class2="C" class3="OS" class4="CT" periodicity1="2" phase1="3.141592653589793" k1="11.296800000000001" periodicity2="1" phase2="3.141592653589793" k2="5.8576"/>
+    <Proper class1="OS" class2="CT" class3="CT" class4="OS" periodicity1="3" phase1="0.0" k1="0.602496" periodicity2="2" phase2="0.0" k2="4.916200000000001"/>
+    <Proper class1="OS" class2="CT" class3="CT" class4="OH" periodicity1="3" phase1="0.0" k1="0.602496" periodicity2="2" phase2="0.0" k2="4.916200000000001"/>
+    <Proper class1="OH" class2="CT" class3="CT" class4="OH" periodicity1="3" phase1="0.0" k1="0.602496" periodicity2="2" phase2="0.0" k2="4.916200000000001"/>
+    <Proper class1="H1" class2="CT" class3="CT" class4="OS" periodicity1="3" phase1="0.0" k1="0.0" periodicity2="1" phase2="0.0" k2="1.046"/>
+    <Proper class1="H1" class2="CT" class3="CT" class4="OH" periodicity1="3" phase1="0.0" k1="0.0" periodicity2="1" phase2="0.0" k2="1.046"/>
+    <Proper class1="" class2="CF" class3="CE" class4="" periodicity1="2" phase1="3.141592653589793" k1="14.644"/>
+    <Proper class1="" class2="CF" class3="N2" class4="" periodicity1="2" phase1="3.141592653589793" k1="10.0416"/>
+    <Proper class1="" class2="CF" class3="ND" class4="" periodicity1="2" phase1="3.141592653589793" k1="20.0832"/>
+    <Proper class1="" class2="CE" class3="CE" class4="" periodicity1="2" phase1="3.141592653589793" k1="22.8028"/>
+    <Proper class1="" class2="CB" class3="NR" class4="" periodicity1="2" phase1="3.141592653589793" k1="6.9036"/>
+    <Proper class1="" class2="CE" class3="NR" class4="" periodicity1="2" phase1="3.141592653589793" k1="6.9036"/>
+    <Proper class1="" class2="CE" class3="NB" class4="" periodicity1="2" phase1="3.141592653589793" k1="10.6692"/>
+    <Proper class1="" class2="CE" class3="ND" class4="" periodicity1="2" phase1="3.141592653589793" k1="17.3636"/>
+    <Proper class1="" class2="CP" class3="NR" class4="" periodicity1="2" phase1="3.141592653589793" k1="7.1128"/>
+    <Proper class1="" class2="CQ" class3="ND" class4="" periodicity1="2" phase1="3.141592653589793" k1="28.4512"/>
+    <Proper class1="" class2="CT" class3="NR" class4="" periodicity1="2" phase1="0.0" k1="0.0"/>
+    <Proper class1="" class2="C5" class3="NR" class4="" periodicity1="2" phase1="3.141592653589793" k1="7.1128"/>
+    <Proper class1="CT" class2="OS" class3="CT" class4="NR" periodicity1="3" phase1="0.0" k1="1.6024720000000001" periodicity2="2" phase2="0.0" k2="2.7196000000000002"/>
+    <Proper class1="" class2="CT" class3="OR" class4="" periodicity1="3" phase1="0.0" k1="1.6038666666666666"/>
+    <Proper class1="" class2="OR" class3="P" class4="" periodicity1="3" phase1="0.0" k1="1.046"/>
+    <Proper class1="" class2="CI" class3="OR" class4="" periodicity1="3" phase1="0.0" k1="1.6038666666666666"/>
+    <Proper class1="H1" class2="CT" class3="CI" class4="OR" periodicity1="3" phase1="0.0" k1="0.0" periodicity2="1" phase2="0.0" k2="1.046"/>
+    <Proper class1="OR" class2="P" class3="OR" class4="CI" periodicity1="1" phase1="0.5549288319349986" k1="0.7747973040000001" periodicity2="2" phase2="6.142853854002235" k2="5.257325704" periodicity3="3" phase3="6.235144770452592" k3="1.484725872"/>
+    <Proper class1="OS" class2="CT" class3="CT" class4="OR" periodicity1="3" phase1="0.0" k1="0.602496" periodicity2="2" phase2="0.0" k2="4.916200000000001"/>
+    <Proper class1="OR" class2="CT" class3="CT" class4="OH" periodicity1="3" phase1="0.0" k1="0.602496" periodicity2="2" phase2="0.0" k2="4.916200000000001"/>
+    <Proper class1="H1" class2="CT" class3="CT" class4="OR" periodicity1="3" phase1="0.0" k1="0.0" periodicity2="1" phase2="0.0" k2="1.046"/>
+    <Proper class1="OS" class2="CT" class3="NR" class4="C5" periodicity1="1" phase1="1.7154841217852266" k1="3.14358564" periodicity2="2" phase2="5.734453790352569" k2="4.58572676" periodicity3="3" phase3="4.023332991697329" k3="1.729732544" periodicity4="4" phase4="0.7154104603924757" k4="0.27091400000000004"/>
+    <Proper class1="OS" class2="CT" class3="NR" class4="CP" periodicity1="1" phase1="1.8699457605867247" k1="3.816912576" periodicity2="2" phase2="5.793969517845576" k2="5.766242360000001" periodicity3="3" phase3="3.626096053943419" k3="1.780513752" periodicity4="4" phase4="5.726948874568993" k4="0.25140819200000003"/>
+    <Proper class1="CT" class2="CT" class3="CI" class4="OR" periodicity1="1" phase1="2.088984581712013" k1="1.5060182480000002" periodicity2="2" phase2="4.783947479716458" k2="5.138152832" periodicity3="3" phase3="5.972691233249795" k3="3.267687264"/>
+    <Proper class1="OR" class2="P" class3="OR" class4="CT" periodicity1="1" phase1="2.6874579822208684" k1="1.159884296" periodicity2="2" phase2="0.05201081170943102" k2="4.460336464" periodicity3="3" phase3="0.5143485305627289" k3="0.787843016"/>
+    <Improper class1="C" class2="" class3="" class4="O" periodicity1="2" phase1="3.141592653589793" k1="43.932"/>
+    <Improper class1="N2" class2="" class3="" class4="H" periodicity1="2" phase1="3.141592653589793" k1="4.184"/>
+    <Improper class1="NA" class2="" class3="" class4="H" periodicity1="2" phase1="3.141592653589793" k1="4.184"/>
+    <Improper class1="CA" class2="" class3="N2" class4="N2" periodicity1="2" phase1="3.141592653589793" k1="43.932"/>
+    <Improper class1="CA" class2="" class3="" class4="HA" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="CQ" class2="" class3="" class4="H5" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="CP" class2="" class3="" class4="H5" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="CS" class2="" class3="" class4="H4" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="CS" class2="" class3="" class4="HA" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="CA" class2="" class3="" class4="H4" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="CA" class2="" class3="" class4="H5" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="N*" class2="CB" class3="CP" class4="CT" periodicity1="2" phase1="3.141592653589793" k1="4.184"/>
+    <Improper class1="N*" class2="C" class3="CS" class4="CT" periodicity1="2" phase1="3.141592653589793" k1="4.184"/>
+    <Improper class1="C" class2="CT" class3="O" class4="OH" periodicity1="2" phase1="3.141592653589793" k1="43.932"/>
+    <Improper class1="CA" class2="CA" class3="CA" class4="CT" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="CS" class2="C" class3="CS" class4="CT" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="CA" class2="CS" class3="N2" class4="NC" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="CA" class2="CB" class3="N2" class4="NC" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="CA" class2="N2" class3="NA" class4="NC" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="C" class2="CA" class3="CA" class4="OH" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="CA" class2="CA" class3="CA" class4="OH" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="C" class2="H5" class3="O" class4="OH" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="C" class2="H5" class3="O" class4="OS" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="CS" class2="CS" class3="CT" class4="HA" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="C" class2="CS" class3="H4" class4="O" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="C5" class2="" class3="" class4="H5" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="N*" class2="C5" class3="CB" class4="CT" periodicity1="2" phase1="3.141592653589793" k1="4.184"/>
+    <Improper class1="C4" class2="" class3="" class4="H4" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="C4" class2="" class3="" class4="HA" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="N*" class2="C" class3="C4" class4="CT" periodicity1="2" phase1="3.141592653589793" k1="4.184"/>
+    <Improper class1="C4" class2="C" class3="C4" class4="CT" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="CA" class2="C4" class3="N2" class4="NC" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="C" class2="CA" class3="CA" class4="OS" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="CB" class2="CB" class3="N*" class4="NC" periodicity1="2" phase1="3.141592653589793" k1="0.0"/>
+    <Improper class1="CB" class2="C" class3="CB" class4="NB" periodicity1="2" phase1="3.141592653589793" k1="0.0"/>
+    <Improper class1="CB" class2="CA" class3="CB" class4="NB" periodicity1="2" phase1="3.141592653589793" k1="0.0"/>
+    <Improper class1="CJ" class2="H1" class3="H1" class4="OH" periodicity1="2" phase1="3.141592653589793" k1="0.0"/>
+    <Improper class1="CJ" class2="CT" class3="H1" class4="OH" periodicity1="2" phase1="3.141592653589793" k1="0.0"/>
+    <Improper class1="CJ" class2="CT" class3="H1" class4="H1" periodicity1="2" phase1="3.141592653589793" k1="0.0"/>
+    <Improper class1="CJ" class2="H1" class3="H1" class4="OS" periodicity1="2" phase1="3.141592653589793" k1="0.0"/>
+    <Improper class1="CJ" class2="CT" class3="H1" class4="OS" periodicity1="2" phase1="3.141592653589793" k1="0.0"/>
+    <Improper class1="NR" class2="CB" class3="CP" class4="CT" periodicity1="2" phase1="3.141592653589793" k1="4.184"/>
+    <Improper class1="CF" class2="CE" class3="N2" class4="ND" periodicity1="2" phase1="3.141592653589793" k1="4.6024"/>
+    <Improper class1="NR" class2="C5" class3="CE" class4="CT" periodicity1="2" phase1="3.141592653589793" k1="4.184"/>
+  </PeriodicTorsionForce>
+  <NonbondedForce coulomb14scale="0.8333333333333334" lj14scale="0.5">
+    <UseAttributeFromResidue name="charge"/>
+    <Atom class="C" sigma="0.328499302542451" epsilon="0.2250992"/>
+    <Atom class="CA" sigma="0.328499302542451" epsilon="0.2250992"/>
+    <Atom class="CB" sigma="0.328499302542451" epsilon="0.2250992"/>
+    <Atom class="CI" sigma="0.3399669508423535" epsilon="0.4577296"/>
+    <Atom class="CP" sigma="0.328499302542451" epsilon="0.2250992"/>
+    <Atom class="CS" sigma="0.328499302542451" epsilon="0.2250992"/>
+    <Atom class="CQ" sigma="0.33004055732483384" epsilon="0.2661024"/>
+    <Atom class="CT" sigma="0.3399669508423535" epsilon="0.4577296"/>
+    <Atom class="C5" sigma="0.33004055732483384" epsilon="0.2661024"/>
+    <Atom class="C4" sigma="0.328499302542451" epsilon="0.2250992"/>
+    <Atom class="H" sigma="1.0" epsilon="0.0"/>
+    <Atom class="H1" sigma="0.2471353044121301" epsilon="0.06568879999999999"/>
+    <Atom class="H2" sigma="0.22931733004932334" epsilon="0.06568879999999999"/>
+    <Atom class="HA" sigma="0.25996424595335105" epsilon="0.06276"/>
+    <Atom class="H4" sigma="0.2510552587719476" epsilon="0.06276"/>
+    <Atom class="H5" sigma="0.24214627159054422" epsilon="0.06276"/>
+    <Atom class="HO" sigma="1.0" epsilon="0.0"/>
+    <Atom class="NA" sigma="0.33507057148745417" epsilon="0.7112800000000001"/>
+    <Atom class="NB" sigma="0.3289002069656142" epsilon="0.7112800000000001"/>
+    <Atom class="NC" sigma="0.33507057148745417" epsilon="0.7112800000000001"/>
+    <Atom class="N2" sigma="0.33507057148745417" epsilon="0.7112800000000001"/>
+    <Atom class="N*" sigma="0.33507057148745417" epsilon="0.7112800000000001"/>
+    <Atom class="O" sigma="0.2959921901149463" epsilon="0.87864"/>
+    <Atom class="OH" sigma="0.3066473387839048" epsilon="0.8803136"/>
+    <Atom class="OS" sigma="0.3000012343465779" epsilon="0.7112800000000001"/>
+    <Atom class="P" sigma="0.37417746161894255" epsilon="0.8368000000000001"/>
+    <Atom class="CE" sigma="0.33004055732483384" epsilon="0.2661024"/>
+    <Atom class="CF" sigma="0.33004055732483384" epsilon="0.2661024"/>
+    <Atom class="NR" sigma="0.3289002069656142" epsilon="0.7112800000000001"/>
+    <Atom class="ND" sigma="0.3289002069656142" epsilon="0.7112800000000001"/>
+    <Atom class="OQ" sigma="0.31168982552857916" epsilon="0.87864"/>
+    <Atom class="OR" sigma="0.31569886976021067" epsilon="0.7112800000000001"/>
+  </NonbondedForce>
+</ForceField>

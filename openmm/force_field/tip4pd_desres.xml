@@ -1,0 +1,68 @@
+<ForceField>
+ <Info>
+    <DateGenerated>2023-02-21</DateGenerated>
+    <Source Source="parm/frcmod.tip4pd" md5hash="1188470b8b4b807002c04cbaed3c146b" sourcePackage="AmberTools" sourcePackageVersion="20.15">parm/frcmod.tip4pd</Source>
+    <Source Source="parm/frcmod.charmm22-ions" md5hash="40e8668a259bf761e351e835db51bca7" sourcePackage="AmberTools" sourcePackageVersion="20.15">parm/frcmod.charmm22-ions</Source>
+    <Source Source="lib/atomic_ions.lib" md5hash="e900cee0c71ec2795d25b3555de486e1" sourcePackage="AmberTools" sourcePackageVersion="20.15">lib/atomic_ions.lib</Source>
+    <Source Source="lib/solvents.lib" md5hash="afc5c4c055e78f0abd1d2840a792b0af" sourcePackage="AmberTools" sourcePackageVersion="20.15">lib/solvents.lib</Source>
+    <Source Source="lib/tip4pd.off" md5hash="090c5eecf7d9367dc909b38d00f04968" sourcePackage="AmberTools" sourcePackageVersion="20.15">lib/tip4pd.off</Source>
+    <Source Source="tip4pfb.xml" md5hash="5da20fd20f6aefc31c499fc7c635bf69" sourcePackage="OpenMM" sourcePackageVersion="7.5.0">tip4pfb.xml</Source>
+    <Reference>Joung, I.S., and Cheatham, Thomas E. (2008). Determination of Alkali and Halide Monovalent Ion Parameters for Use in Explicitly Solvated Biomolecular Simulations. J. Phys. Chem. B 112, 9020-9041.</Reference>
+    <Reference>Joung, I.S., and Cheatham, T.E. (2009). Molecular Dynamics Simulations of the Dynamic and Energetic Properties of Alkali and Halide Ions Using Water-Model-Specific Ion Parameters. J. Phys. Chem. B 113, 13279-13290.</Reference>
+    <Reference>Li, P., Roberts, B.P., Chakravorty, D.K., and Merz, K.M. (2013). Rational Design of Particle Mesh Ewald Compatible Lennard-Jones Parameters for +2 Metal Cations in Explicit Solvent. J. Chem. Theory Comput. 9, 2733-2748.</Reference>
+    <Reference>Jorgensen, W.L., Chandrasekhar, J., Madura, J.D., Impey, R.W., and Klein, M.L. (1983). Comparison of simple potential functions for simulating liquid water. The Journal of Chemical Physics 79, 926-935.</Reference>
+  </Info>
+  <AtomTypes>
+  <Type element="Na" name="tip4pd_desres-Na+" class="tip4pd_desres-Na+" mass="22.99"/>
+    <Type element="K" name="tip4pd_desres-K+" class="tip4pd_desres-K+" mass="39.1"/>
+    <Type element="Cs" name="tip4pd_desres-Cs+" class="tip4pd_desres-Cs+" mass="132.91"/>
+    <Type element="Cl" name="tip4pd_desres-Cl-" class="tip4pd_desres-Cl-" mass="35.45"/>
+    <Type element="Mg" name="tip4pd_desres-Mg2+" class="tip4pd_desres-Mg2+" mass="24.305"/>
+   <Type name="tip4p-fb-O" class="tip4p-fb-O" element="O" mass="15.99943"/>
+  <Type name="tip4p-fb-H" class="tip4p-fb-H" element="H" mass="1.007947"/>
+  <Type name="tip4p-fb-M" class="tip4p-fb-M" mass="0"/>
+ </AtomTypes>
+ <Residues>
+  <Residue name="CL">
+      <Atom name="CL" type="tip4pd_desres-Cl-" charge="-1.0"/>
+    </Residue>
+    <Residue name="CS">
+      <Atom name="CS" type="tip4pd_desres-Cs+" charge="1.0"/>
+    </Residue>
+    <Residue name="K">
+      <Atom name="K" type="tip4pd_desres-K+" charge="1.0"/>
+    </Residue>
+    <Residue name="MG">
+      <Atom name="MG" type="tip4pd_desres-Mg2+" charge="2.0"/>
+    </Residue>
+    <Residue name="NA">
+      <Atom name="NA" type="tip4pd_desres-Na+" charge="1.0"/>
+    </Residue>
+   <Residue name="HOH">
+   <Atom name="O" type="tip4p-fb-O" charge="0"/>
+   <Atom name="H1" type="tip4p-fb-H" charge="5.258681106763e-01"/>
+   <Atom name="H2" type="tip4p-fb-H" charge="5.258681106763e-01"/>
+   <Atom name="M" type="tip4p-fb-M" charge="-1.0517362213526e+00"/>
+   <VirtualSite type="average3" index="3" atom1="0" atom2="1" atom3="2" weight1="8.203146574531e-01" weight2="8.984267127345e-02" weight3="8.984267127345e-02"/>
+   <Bond atomName1="O" atomName2="H1"/>
+   <Bond atomName1="O" atomName2="H2"/>
+  </Residue>
+ </Residues>
+ <HarmonicBondForce>
+  <Bond type1="tip4p-fb-O" type2="tip4p-fb-H" length="0.09572" k="462750.4"/>
+ </HarmonicBondForce>
+ <HarmonicAngleForce>
+  <Angle type1="tip4p-fb-H" type2="tip4p-fb-O" type3="tip4p-fb-H" angle="1.82421813418" k="836.8"/>
+ </HarmonicAngleForce>
+ <NonbondedForce coulomb14scale="0.8333333333333334" lj14scale="0.5">
+  <UseAttributeFromResidue name="charge"/>
+    <Atom class="tip4pd_desres-Na+" sigma="0.24299262537277755" epsilon="0.1962296"/>
+    <Atom class="tip4pd_desres-K+" sigma="0.3142645228240047" epsilon="0.364008"/>
+    <Atom class="tip4pd_desres-Cs+" sigma="0.37417746161894255" epsilon="0.79496"/>
+    <Atom class="tip4pd_desres-Cl-" sigma="0.4044680180357141" epsilon="0.6276"/>
+    <Atom class="tip4pd_desres-Mg2+" sigma="0.2111429961992604" epsilon="0.06276"/>
+   <Atom type="tip4p-fb-O" sigma="3.165552430462e-01" epsilon="7.492790213533e-01"/>
+  <Atom type="tip4p-fb-H" sigma="1" epsilon="0"/>
+  <Atom type="tip4p-fb-M" sigma="1" epsilon="0"/>
+ </NonbondedForce>
+</ForceField>
