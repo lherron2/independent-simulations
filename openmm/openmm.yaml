@@ -125,6 +125,7 @@ dependencies:
   - pandas=1.5.3=py310h9b08913_0
   - parmed=3.4.4=py310heca2aa9_0
   - pcre2=10.40=hc3806b6_0
+  - pdbfixer=1.8.1=pyh6c4a22f_0
   - perl=5.34.0=h5eee18b_2
   - pillow=9.4.0=py310h023d228_1
   - pint=0.20.1=pyhd8ed1ab_0
