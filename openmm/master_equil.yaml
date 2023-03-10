@@ -1,0 +1,8 @@
+
+# all units are in ps
+pdbid: 1anr
+sampling_freq: 2
+timestep: 0.001
+simulation_length: 10000
+data_path: /home/lherron/scratch/RNAfold/PDBID/replicas/structureSTRUCTID
+
