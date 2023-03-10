@@ -7,12 +7,14 @@
 #SBATCH --mail-type=NONE    # Send email at begin and end of job
 #SBATCH --output=job.out
 
+# you will have to change this
 . "/home/lherron/scratch.tiwary-prj/miniconda/etc/profile.d/conda.sh"
 conda activate openmm
 
 pdb=$1
 structid=$2
 
+PREFIX
 master_yaml="/home/lherron/scratch/RNAfold/${pdb}/replicas/master_equil.yaml"
 sim_yaml="/home/lherron/scratch/RNAfold/${pdb}/replicas/structure${structid}/sim_equil.yaml"
 
