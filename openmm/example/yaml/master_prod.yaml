@@ -1,0 +1,14 @@
+
+# all units are in ps
+pdbid: 1anr
+sampling_freq: 2
+timestep: 0.002
+simulation_length: 100000
+
+# PDBID and STRUCTID will be replaced when the file is read by the run_equil.py and run_prod.py files
+# Change the datapath to be compatible with your system. plumed_path is deprecated and will be removed.
+data_path: /home/lherron/scratch/RNAfold/PDBID/replicas/structureSTRUCTID
+plumed_path: /home/lherron/scratch/RNAfold/5udz/replicas/torsions.dat
+
+# flag to resume from most recent simulations.
+resume: False

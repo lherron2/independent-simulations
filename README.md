@@ -13,6 +13,10 @@ cp openmm/force_fields/* {CONDA_PATH}/envs/openmm/lib/python3.10/site-packages/o
 ```
 Your conda path can be found by running ```conda init```
 
+## CONVENTIONS
+
+The simulation directories should be enumerated as ```structure{i}/``` and contain a file names as ```{pdbid}_structure{i}.pdb```. Paths can be configured as needed for the ```scripts/``` directory and in the ```config/```.
+
 ## USAGE
 
 Configure ```*.yaml``` for your systems.

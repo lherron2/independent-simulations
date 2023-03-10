@@ -3,11 +3,11 @@ import numpy as np
 
 parser = argparse.ArgumentParser()
 parser.add_argument('f',
-                    type=str, help="yaml file required")
+                    type=str, help="path to yaml file required")
 parser.add_argument('structid',
                     type=int, help="structid required")
 parser.add_argument('temperatures',
-                    type=str, help="temperatures.npy required")
+                    type=str, help="path to temperatures.npy required")
 args = parser.parse_args()
 
 temp = np.load(args.temperatures)[args.structid]

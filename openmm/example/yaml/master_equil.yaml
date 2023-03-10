@@ -1,0 +1,12 @@
+
+pdbid: 1anr
+
+# all units are in ps
+sampling_freq: 2
+timestep: 0.001
+simulation_length: 10000
+
+# PDBID and STRUCTID will be replaced when the file is read by the run_equil.py and run_prod.py files
+# Change the datapath to be compatible with your system.
+data_path: /home/lherron/scratch/RNAfold/PDBID/replicas/structureSTRUCTID
+
