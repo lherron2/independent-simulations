@@ -20,5 +20,6 @@ PREFIX="../example/yaml"
 master_yaml="${PREFIX}/master_equil.yaml"
 sim_yaml="${PREFIX}/structure${structid}/sim_equil.yaml"
 
-# you can edit the path to run_equil.py until I turn this into an actual package
+# you can edit the path to run_equil.py from other locations until I turn 
+# this into an actual package.
 python -u ../src/run_equil.py --master_yaml $master_yaml --sim_yaml $sim_yaml

@@ -25,3 +25,29 @@ To run simulations configure the ```*.yaml``` files for your system. Then distri
 
 Then run simulations with either ```submit_run_equil_CUDA.sh``` and ```submit_run_prod_CUDA.sh```, editing the contents of the files to run on your HPC cluster.
 
+## EXAMPLE
+
+The provided example will run two simulations of HIV-TAR RNA structures (pdbid: 1anr) at 310K and 350K.
+
+To run the provided example, first substitute the data path for your system into the master_prod.yaml and master_equil.yaml by executing:
+```
+cd openmm/example
+sed -i "s+DATAPATH+$PWD/structSTRUCTID+g" "yaml/master_prod.yaml"
+sed -i "s+DATAPATH+$PWD/structSTRUCTID+g" "yaml/master_equil.yaml"
+```
+
+Then submit the job to your HPC resources by executing:
+```
+cd ../scripts
+for i in {0..1}; do
+	sbatch submit_run_equil_CUDA.sh 1anr $i;
+done
+```
+Note that the submission scripts are configured to request GPU nodes from UMD's HPC computing cluster. You may have to edit the script to be request the correct resources from your HPC cluster. 
+
+Once the equilibration finishes, run the production simulation by executing:
+```
+for i in {0..1}; do
+	sbatch submit_run_equil_CUDA.sh 1anr $i
+done
+```

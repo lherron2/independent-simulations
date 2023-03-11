@@ -5,10 +5,14 @@ sampling_freq: 2
 timestep: 0.002
 simulation_length: 100000
 
-# PDBID and STRUCTID will be replaced when the file is read by the run_equil.py and run_prod.py files
-# Change the datapath to be compatible with your system. plumed_path is deprecated and will be removed.
-data_path: /home/lherron/scratch/RNAfold/PDBID/replicas/structureSTRUCTID
-plumed_path: /home/lherron/scratch/RNAfold/5udz/replicas/torsions.dat
+# For automation purposes, the data_path variable may contain "PDBID" and "STRUCTID" 
+# which will be replaced with their relevant parameters during the execution of the 
+# script.
+# Example: /home/username/data/PDBID/structureSTRUCTID
+#
+# Otherwise the datapath may be edited freely.
+data_path: DATAPATH
+
 
 # flag to resume from most recent simulations.
 resume: False

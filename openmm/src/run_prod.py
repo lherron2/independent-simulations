@@ -13,6 +13,9 @@ def load_yaml(file):
     return yaml_loaded
 
 def load_plumed_file(plumed_path, data_path, sampling_freq):
+    """
+    Currently unused but may be used in the future.
+    """
     with open(plumed_path, 'r') as f:
         plumed_str = f.read()
     os.makedirs(os.path.join(data_path, f"colvar"), exist_ok=True)
@@ -37,14 +40,9 @@ resume = master_prod_params["resume"]
 sampling_freq = int(master_prod_params["sampling_freq"])
 timestep = float(master_prod_params["timestep"])
 simulation_length = int(master_prod_params["simulation_length"])
-plumed_path = master_prod_params["plumed_path"]
 data_path = master_prod_params["data_path"]
 
-plumed_path = plumed_path.replace("PDBID", pdbid)
 data_path = data_path.replace("PDBID", pdbid).replace("STRUCTID", str(structid))
-
-#plumed_path = f'/home/lherron/scratch/RNAfold/{pdbid}/replicas/torsions.dat'
-#data_path = f'/home/lherron/scratch/RNAfold/{pdbid}/replicas/structure{structid}'
 
 sampling_steps = int(sampling_freq / timestep)
 total_steps = int(simulation_length / timestep)
@@ -57,7 +55,6 @@ system = forcefield.createSystem(pdb.topology, nonbondedMethod=PME,
 
 system.addForce(MonteCarloBarostat(1*bar, temperature*kelvin))
 system.addForce(AndersenThermostat(temperature*kelvin, 1/picosecond))
-#system.addForce(PlumedForce(load_plumed_file(plumed_path, data_path, sampling_freq)))
 
 integrator = LangevinMiddleIntegrator(temperature*kelvin, 1/picosecond, timestep*picoseconds)
 simulation = Simulation(pdb.topology, system, integrator)
