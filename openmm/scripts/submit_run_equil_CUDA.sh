@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #SBATCH -t 12:00:00
 #SBATCH --ntasks-per-node=1
 #SBATCH --partition=gpu
@@ -7,7 +7,8 @@
 #SBATCH --mail-type=NONE    # Send email at begin and end of job
 #SBATCH --output=job.out
 
-source ~/.bashrc
+source $HOME/.bashrc
+source ../sourceme.sh
 module load cuda
 conda activate openmm
 
@@ -22,4 +23,4 @@ sim_yaml="${PREFIX}/structure${structid}/sim_equil.yaml"
 
 # you can edit the path to run_equil.py from other locations until I turn 
 # this into an actual package.
-python -u ../src/run_equil.py --master_yaml $master_yaml --sim_yaml $sim_yaml
+run_equil.py --master_yaml $master_yaml --sim_yaml $sim_yaml

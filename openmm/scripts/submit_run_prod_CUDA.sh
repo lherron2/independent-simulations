@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #SBATCH -t 24:00:00
 #SBATCH --ntasks-per-node=1
 #SBATCH --partition=gpu
@@ -8,6 +8,7 @@
 #SBATCH --output=job.out
 
 source ~/.bashrc
+source ../sourceme.sh
 module load cuda
 conda activate openmm
 

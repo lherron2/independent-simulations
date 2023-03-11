@@ -9,9 +9,9 @@ conda env create -f openmm.yaml
 
 Patch DESRES RNA force field files into conda openmm install via:
 ```
-cp openmm/ff/* {CONDA_PATH}/envs/openmm/lib/python3.10/site-packages/openmm/app/data/amber14/
+conda activate openmm
+cp openmm/ff/* $CONDA_PREFIX/lib/python3.10/site-packages/openmm/app/data/amber14/
 ```
-Your conda path can be found by running ```conda init```.
 
 ## CONVENTIONS
 
