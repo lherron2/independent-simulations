@@ -12,10 +12,6 @@ Patch DESRES RNA force field files into conda openmm install via:
 conda activate openmm
 cp openmm/ff/* $CONDA_PREFIX/lib/python3.10/site-packages/openmm/app/data/amber14/
 ```
-<<<<<<< HEAD
-=======
-Your ```{CONDA_PATH}`` can be found by running ```conda init```.
->>>>>>> 113e47cc6c0c60ab49c12c1db765e98fa2124900
 
 ## CONVENTIONS
 
@@ -35,6 +31,7 @@ The provided example will run two simulations of HIV-TAR RNA structures (pdbid: 
 
 First we have to activate the conda environment and add the python scripts located in ```openmm/src``` to the system ```$PATH``` by running
 ```
+conda activate openmm
 cd openmm
 source sourceme.sh
 ```
