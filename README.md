@@ -12,6 +12,10 @@ Patch DESRES RNA force field files into conda openmm install via:
 conda activate openmm
 cp openmm/ff/* $CONDA_PREFIX/lib/python3.10/site-packages/openmm/app/data/amber14/
 ```
+<<<<<<< HEAD
+=======
+Your ```{CONDA_PATH}`` can be found by running ```conda init```.
+>>>>>>> 113e47cc6c0c60ab49c12c1db765e98fa2124900
 
 ## CONVENTIONS
 
