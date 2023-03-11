@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import mdtraj as md
 import argparse
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from openmm.app import *
 from openmm import *
 from openmm.unit import *

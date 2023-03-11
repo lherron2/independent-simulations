@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from pdbfixer import PDBFixer
 from openmm.app import PDBFile
 

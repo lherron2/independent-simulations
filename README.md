@@ -9,7 +9,7 @@ conda env create -f openmm.yaml
 
 Patch DESRES RNA force field files into conda openmm install via:
 ```
-cp openmm/force_fields/* {CONDA_PATH}/envs/openmm/lib/python3.10/site-packages/openmm/app/data/amber14/
+cp openmm/ff/* {CONDA_PATH}/envs/openmm/lib/python3.10/site-packages/openmm/app/data/amber14/
 ```
 Your conda path can be found by running ```conda init```.
 
@@ -29,18 +29,31 @@ Then run simulations with either ```submit_run_equil_CUDA.sh``` and ```submit_ru
 
 The provided example will run two simulations of HIV-TAR RNA structures (pdbid: 1anr) at 310K and 350K.
 
+First we have to activate the conda environment and add the python scripts located in ```openmm/src``` to the system ```$PATH``` by running
+```
+cd openmm
+source sourceme.sh
+```
+
 To run the provided example, first substitute the data path for your system into the master_prod.yaml and master_equil.yaml by executing:
 ```
-cd openmm/example
+cd example
 sed -i "s+DATAPATH+$PWD/structSTRUCTID+g" "yaml/master_prod.yaml"
 sed -i "s+DATAPATH+$PWD/structSTRUCTID+g" "yaml/master_equil.yaml"
+```
+and distribute the simulation-specific configuration files to the simulation directories via:
+```
+for i in {0..1}; do
+	prep_sim_yaml.py --yaml yaml/sim_equil.yaml --structid $i --temperatures temperatures.npy
+	prep_sim_yaml.py --yaml yaml/sim_prod.yaml --structid $i --temperatures temperatures.npy
+done
 ```
 
 Then submit the job to your HPC resources by executing:
 ```
 cd ../scripts
 for i in {0..1}; do
-	sbatch submit_run_equil_CUDA.sh 1anr $i;
+	sbatch submit_run_equil_CUDA.sh 1anr $i
 done
 ```
 Note that the submission scripts are configured to request GPU nodes from UMD's HPC computing cluster. You may have to edit the script to be request the correct resources from your HPC cluster. 
