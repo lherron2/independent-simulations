@@ -9,6 +9,7 @@
 
 source $HOME/.bashrc
 source ../sourceme.sh
+module purge
 module load cuda
 conda activate openmm
 
