@@ -20,7 +20,7 @@ structid=$2
 # prefix is currently set to run included example
 PREFIX="../example" 
 master_yaml="${PREFIX}/yaml/master_equil.yaml"
-sim_yaml="${PREFIX}/structure${structid}/sim_equil.yaml"
+sim_yaml="${PREFIX}/struct${structid}/sim_equil.yaml"
 
 echo $master_yaml
 echo $sim_yaml

@@ -20,7 +20,7 @@ structid=$2
 # prefix is currently set to run included example
 PREFIX="../example" 
 master_yaml="${PREFIX}/yaml/master_prod.yaml"
-sim_yaml="${PREFIX}/structure${structid}/sim_prod.yaml"
+sim_yaml="${PREFIX}/struct${structid}/sim_prod.yaml"
 
 # you can edit the path to run_equil.py until I turn this into an actual package
 python -u ../src/run_prod.py --master_yaml $master_yaml --sim_yaml $sim_yaml

@@ -19,6 +19,6 @@ with open(args.yaml, 'r') as f:
 yaml = yaml.replace("TEMP", str(temp)).replace("STRUCTID", str(args.structid))
 
 yaml_fname = args.yaml.split('/')[-1]
-with open(f"structure{args.structid}/" + yaml_fname, 'w') as f:
+with open(f"struct{args.structid}/" + yaml_fname, 'w') as f:
     f.write(yaml)
 
