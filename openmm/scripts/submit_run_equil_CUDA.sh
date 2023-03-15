@@ -18,8 +18,8 @@ pdb=$1
 structid=$2
 
 # prefix is currently set to run included example
-PREFIX="../example/yaml" 
-master_yaml="${PREFIX}/master_equil.yaml"
+PREFIX="../example" 
+master_yaml="${PREFIX}/yaml/master_equil.yaml"
 sim_yaml="${PREFIX}/structure${structid}/sim_equil.yaml"
 
 echo $master_yaml
