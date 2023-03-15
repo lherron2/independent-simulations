@@ -12,5 +12,5 @@ simulation_length: 10000
 # Example: /home/username/data/PDBID/structureSTRUCTID
 #
 # Otherwise the datapath may be edited freely.
-data_path: /home/lherron/scratch/repos/independent-simulations/openmm/example/structSTRUCTID
+data_path: DATAPATH
 
