@@ -15,9 +15,9 @@ def load_yaml(file):
     return yaml_loaded
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--master_yaml', required=True, 
+parser.add_argument('--master_yaml', required=True,
                     type=str, help="master yaml file is required")
-parser.add_argument('--sim_yaml', required=True, 
+parser.add_argument('--sim_yaml', required=True,
                     type=str, help="simulation specific yaml file is required")
 args = parser.parse_args()
 
@@ -45,20 +45,20 @@ forcefield = ForceField('amber14/RNA.Shaw_charmm22-ions.xml', 'amber14/tip4pd_de
 modeller = Modeller(pdb.topology, pdb.positions)
 modeller.addExtraParticles(forcefield)
 
-PDBFile.writeFile(modeller.topology, modeller.positions, 
+PDBFile.writeFile(modeller.topology, modeller.positions,
                   open(os.path.join(data_path, f'{pdbid}_struct{structid}_nosol.pdb'), 'w'))
 
-dmat = distance_matrix(modeller.positions.value_in_unit(nanometers), 
+dmat = distance_matrix(modeller.positions.value_in_unit(nanometers),
                         modeller.positions.value_in_unit(nanometers))
 box_dim = 3*max(1, dmat.std()) + dmat.max()
 
-modeller.addSolvent(forcefield, boxSize=Vec3(box_dim, box_dim, box_dim)*nanometers, 
+modeller.addSolvent(forcefield, boxSize=Vec3(box_dim, box_dim, box_dim)*nanometers,
                     ionicStrength=1*molar, positiveIon='K+', negativeIon='Cl-', model='tip4pew')
 
-PDBFile.writeFile(modeller.topology, modeller.positions, 
+PDBFile.writeFile(modeller.topology, modeller.positions,
                   open(os.path.join(data_path, f'{pdbid}_struct{structid}_sol.pdb'), 'w'))
 
-system = forcefield.createSystem(modeller.topology, nonbondedMethod=PME, nonbondedCutoff=1*nanometer, 
+system = forcefield.createSystem(modeller.topology, nonbondedMethod=PME, nonbondedCutoff=1*nanometer,
                                  constraints=HBonds)
 
 system.addForce(MonteCarloBarostat(1*bar, temperature*kelvin))
@@ -72,9 +72,9 @@ simulation.minimizeEnergy()
 
 simulation.step(1000)
 integrator = LangevinMiddleIntegrator(temperature*kelvin, 1/picosecond, timestep*picoseconds)
-simulation.reporters.append(XTCReporter(os.path.join(data_path, 
+simulation.reporters.append(XTCReporter(os.path.join(data_path,
                                                      f'{pdbid}_struct{structid}_equil.xtc'), sampling_steps))
-simulation.reporters.append(StateDataReporter(os.path.join(data_path, f'{pdbid}_struct{structid}_equil.log'), sampling_steps, 
+simulation.reporters.append(StateDataReporter(os.path.join(data_path, f'{pdbid}_struct{structid}_equil.log'), sampling_steps,
                                               step=True, time=True, speed=True, remainingTime=True,
                                               totalSteps=simulation_steps, separator='\t'))
 # running simulation
