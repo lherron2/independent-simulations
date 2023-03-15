@@ -11,7 +11,7 @@ simulation_length: 100000
 # Example: /home/username/data/PDBID/structureSTRUCTID
 #
 # Otherwise the datapath may be edited freely.
-data_path: DATAPATH
+data_path: /home/lherron/scratch/repos/independent-simulations/openmm/example/structSTRUCTID
 
 
 # flag to resume from most recent simulations.
