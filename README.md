@@ -3,6 +3,7 @@
 ## INSTALL
 Install the openmm environment with: 
 ```
+cd openmm
 # create conda environment for openmm
 conda env create -f openmm.yaml
 ```
