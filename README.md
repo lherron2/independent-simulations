@@ -66,3 +66,5 @@ for i in {0..1}; do
 	sbatch submit_run_equil_CUDA.sh 1anr $i
 done
 ```
+
++ Change the ```examples/yaml``` directory to ```examples/config```.
