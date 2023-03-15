@@ -14,10 +14,6 @@ conda activate openmm
 cp ff/* $CONDA_PREFIX/lib/python3.10/site-packages/openmm/app/data/amber14/
 ```
 
-## CONVENTIONS
-
-The simulation directories should be enumerated as ```structure{i}/``` and contain a file names as ```{pdbid}_structure{i}.pdb```. Paths can be configured as needed for the ```scripts/``` directory and in the ```config/```.
-
 ## USAGE
 
 Simulations are parameterized by four files: ```master_equil.yaml``` and ```master_prod.yaml```, and  ```sim_equil.yaml``` and ```sim_prod.yaml```. The ```master.yaml``` files contain parameters which are shared across independent simulations, while the ```sim.yaml``` files contain parameters which are unique to a particular simulation (e.g. temperature).
@@ -67,4 +63,10 @@ for i in {0..1}; do
 done
 ```
 
+## CONVENTIONS
+
+The simulation directories should be enumerated as ```struct{i}/``` and contain a file names as ```{pdbid}_struct{i}.pdb```. Paths can be configured as needed for files in the ```scripts/``` and ```config/``` directories.
+
+## TO-DO
 + Change the ```examples/yaml``` directory to ```examples/config```.
+
