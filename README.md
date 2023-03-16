@@ -59,7 +59,7 @@ Note that the submission scripts are configured to request GPU nodes from UMD's 
 Once the equilibration finishes, run the production simulation by executing:
 ```
 for i in {0..1}; do
-	sbatch submit_run_equil_CUDA.sh 1anr $i
+	sbatch submit_run_prod_CUDA.sh 1anr $i
 done
 ```
 
