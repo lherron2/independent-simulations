@@ -58,6 +58,7 @@ u = mda.Universe(pdb_top, traj_path)
 energies = []
 start_time = int(time.time())
 print_freq = 10
+save_freq = 1000
 for frame_num, ts in enumerate(u.trajectory, 1):
     all_near = select_near_nucleic(u, rad=rad)
     forcefield = ForceField('amber14/RNA.Shaw_charmm22-ions.xml', 'amber14/tip4pd_desres.xml')
@@ -74,7 +75,10 @@ for frame_num, ts in enumerate(u.trajectory, 1):
     if frame_num % print_freq == 0:
         elapsed_time = time.time() - start_time
         time_remaining = (u.trajectory.n_frames - frame_num) * (elapsed_time/frame_num)
-        print(f"{pdbid}, struct:{i}, frame:{frame_num}, time_to_completion:{str(datetime.timedelta(0, time_remaining)).split('.')[0]} (HH:MM:SS)")
+        start_time = elapsed_time
+        print(f"{pdbid}, struct:{i}, frame:{frame_num}, time_to_completion: {str(datetime.timedelta(0, time_remaining)).split('.')[0]} (HH:MM:SS)")
+    if frame_num % save_freq == 0:
+        np.save(os.path.join(base_path, f"{pdbid}_struct{i}_energies.npy"), np.array(energies))
 
-energies = np.array(energies)
+np.array(energies)
 np.save(os.path.join(base_path, f"{pdbid}_struct{i}_energies.npy"), energies)
