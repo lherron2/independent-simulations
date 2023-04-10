@@ -53,20 +53,33 @@ dmat = distance_matrix(modeller.positions.value_in_unit(nanometers),
 box_dim = 3*max(1, dmat.std()) + dmat.max()
 
 modeller.addSolvent(forcefield, boxSize=Vec3(box_dim, box_dim, box_dim)*nanometers,
-                    ionicStrength=1*molar, positiveIon='K+', negativeIon='Cl-', model='tip4pew')
+                    model='tip4pew')
+modeller.deleteWater()
 
-PDBFile.writeFile(modeller.topology, modeller.positions,
-                  open(os.path.join(data_path, f'{pdbid}_struct{structid}_sol.pdb'), 'w'))
-
-system = forcefield.createSystem(modeller.topology, nonbondedMethod=PME, nonbondedCutoff=1*nanometer,
+system = forcefield.createSystem(modeller.topology,
+                                 nonbondedMethod=PME,
+                                 nonbondedCutoff=1*nanometer,
                                  constraints=HBonds)
 
 system.addForce(MonteCarloBarostat(1*bar, temperature*kelvin))
 system.addForce(AndersenThermostat(temperature*kelvin, 1/picosecond))
 
 integrator = LangevinMiddleIntegrator(temperature*kelvin, 1/picosecond, 0.0005*picoseconds)
+minimizer = Simulation(modeller.topology, system, integrator)
+minimizer.context.setPositions(modeller.positions)
+minimizer.context.setVelocitiesToTemperature(temperature)
+minimizer.minimizeEnergy()
+minimized_positions = minimizer.context.getState(getPositions=True).getPositions()
+
+modeller.addSolvent(forcefield, boxSize=Vec3(box_dim, box_dim, box_dim)*nanometers,
+                    ionicStrength=1*molar, positiveIon='K+', negativeIon='Cl-', model='tip4pew')
+
+PDBFile.writeFile(modeller.topology, modeller.positions,
+                  open(os.path.join(data_path, f'{pdbid}_struct{structid}_sol.pdb'), 'w'))
+
+integrator = LangevinMiddleIntegrator(temperature*kelvin, 1/picosecond, 0.0005*picoseconds)
 simulation = Simulation(modeller.topology, system, integrator)
-simulation.context.setPositions(modeller.positions)
+simulation.context.setPositions(minimized_positions)
 simulation.context.setVelocitiesToTemperature(temperature)
 simulation.minimizeEnergy()
 
