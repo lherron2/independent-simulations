@@ -8,6 +8,7 @@ from mdtraj.reporters import XTCReporter
 import os
 import yaml
 import argparse
+import numpy as np
 
 def load_yaml(file):
     with open(file, 'r') as stream:
@@ -26,9 +27,9 @@ def load_plumed_file(plumed_path, data_path, sampling_freq):
     return plumed_str
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--master_yaml', required=True, 
+parser.add_argument('--master_yaml', required=True,
                     type=str, help="master yaml file is required")
-parser.add_argument('--sim_yaml', required=True, 
+parser.add_argument('--sim_yaml', required=True,
                     type=str, help="simulation specific yaml file is required")
 args = parser.parse_args()
 
@@ -66,17 +67,17 @@ if not resume:
     remaining_steps = total_steps
 else:
     simulation.loadCheckpoint(os.path.join(data_path, f'{pdbid}_struct{structid}.chk'))
-    steps_simulated = np.loadtxt(os.path.join(data_path, f'{pdbid}_struct{structid}.energy'), 
+    steps_simulated = np.loadtxt(os.path.join(data_path, f'{pdbid}_struct{structid}.energy'),
                                  skiprows=1, delimiter=',')[-1][0]
     remaining_steps = total_steps - steps_simulated
 
-simulation.reporters.append(XTCReporter(os.path.join(data_path, f'{pdbid}_struct{structid}.xtc'), 
+simulation.reporters.append(XTCReporter(os.path.join(data_path, f'{pdbid}_struct{structid}.xtc'),
                                         sampling_steps, append=resume))
-simulation.reporters.append(StateDataReporter(os.path.join(data_path, f'{pdbid}_struct{structid}.energy'), 
-                                              sampling_steps, step=True, potentialEnergy=True, temperature=True, 
+simulation.reporters.append(StateDataReporter(os.path.join(data_path, f'{pdbid}_struct{structid}.energy'),
+                                              sampling_steps, step=True, potentialEnergy=True, temperature=True,
                                               append=resume))
-simulation.reporters.append(StateDataReporter(os.path.join(data_path, f'{pdbid}_struct{structid}.log'), sampling_steps, 
-                                              step=True, time=True, speed=True, remainingTime=True, append=resume, 
+simulation.reporters.append(StateDataReporter(os.path.join(data_path, f'{pdbid}_struct{structid}.log'), sampling_steps,
+                                              step=True, time=True, speed=True, remainingTime=True, append=resume,
                                               totalSteps=total_steps, separator='\t'))
 simulation.reporters.append(CheckpointReporter(os.path.join(data_path, f'{pdbid}_struct{structid}.chk'), sampling_steps))
 
