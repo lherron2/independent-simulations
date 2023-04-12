@@ -19,7 +19,7 @@ def bash(command):
     output = subprocess.check_output(command, shell=True).decode("utf-8").rstrip().split("\n")
     return output
 
-def get_simulation_index(data_path, pdbid, structid, identifier):
+def get_simulation_idx(data_path, pdbid, structid, identifier):
     xtc_string=f"{pdbid}_{identifier}{structid}_"
     xtc_list = bash(f"ls {data_path} | '{xtc_string}[0-9]*\.xtc'")
     simulation_indices = np.array([int(i) for i in xtc_list.split(xtc_string)[-1].split('.xtc')[0]])
