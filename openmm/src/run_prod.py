@@ -8,6 +8,7 @@ import os
 import yaml
 import argparse
 import numpy as np
+import subprocess
 
 def load_yaml(file):
     with open(file, 'r') as stream:
