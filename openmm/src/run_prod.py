@@ -23,7 +23,7 @@ def bash(command):
 def get_simulation_idx(data_path, pdbid, structid, identifier):
     xtc_string=f"{pdbid}_{identifier}{structid}_"
     xtc_list = bash(f"ls {data_path} | grep '{xtc_string}[0-9]*\.xtc'")
-    simulation_indices = np.array([int(i) for i in xtc_list.split(xtc_string)[-1].split('.xtc')[0]])
+    simulation_indices = np.array([int(i.split(xtc_string)[-1].split('.xtc')[0]]) for i in xtc_list])
     simulation_index = max(simulation_indices) + 1
     return simulation_index
 
