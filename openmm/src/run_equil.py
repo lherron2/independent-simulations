@@ -29,6 +29,7 @@ equil_params = load_yaml(args.sim_yaml)
 temperature = int(equil_params["temperature"])
 pdbid = master_equil_params["pdbid"]
 structid = int(equil_params["structid"])
+identifier = master_equil_params["identifier"]
 sampling_freq = int(master_equil_params["sampling_freq"])
 timestep = float(master_equil_params["timestep"])
 simulation_length = int(master_equil_params["simulation_length"])
@@ -40,23 +41,23 @@ sampling_steps = int(sampling_freq / timestep)
 simulation_steps = int(simulation_length / timestep)
 
 # preparing system
-pdb = PDBFile(os.path.join(data_path, f'{pdbid}_struct{structid}.pdb'))
+pdb = PDBFile(os.path.join(data_path, f'{pdbid}_{identifier}{structid}.pdb'))
 forcefield = ForceField('amber14/RNA.Shaw_charmm22-ions.xml', 'amber14/tip4pd_desres.xml')
-modeller = Modeller(pdb.topology, pdb.positions)
-modeller.addExtraParticles(forcefield)
+unminimized_modeller = Modeller(pdb.topology, pdb.positions)
+unminimized_modeller.addExtraParticles(forcefield)
 
-PDBFile.writeFile(modeller.topology, modeller.positions,
-                  open(os.path.join(data_path, f'{pdbid}_struct{structid}_nosol.pdb'), 'w'))
+PDBFile.writeFile(unminimized_modeller.topology, unminimized_modeller.positions,
+                  open(os.path.join(data_path, f'{pdbid}_{identifier}{structid}_nosol.pdb'), 'w'))
 
-dmat = distance_matrix(modeller.positions.value_in_unit(nanometers),
-                        modeller.positions.value_in_unit(nanometers))
+dmat = distance_matrix(unminimized_modeller.positions.value_in_unit(nanometers),
+                        unminimized_modeller.positions.value_in_unit(nanometers))
 box_dim = 3*max(1, dmat.std()) + dmat.max()
 
-modeller.addSolvent(forcefield, boxSize=Vec3(box_dim, box_dim, box_dim)*nanometers,
+unminimized_modeller.addSolvent(forcefield, boxSize=Vec3(box_dim, box_dim, box_dim)*nanometers,
                     model='tip4pew')
-modeller.deleteWater()
+unminimized_modeller.deleteWater()
 
-system = forcefield.createSystem(modeller.topology,
+system = forcefield.createSystem(unminimized_modeller.topology,
                                  nonbondedMethod=PME,
                                  nonbondedCutoff=1*nanometer,
                                  constraints=HBonds)
@@ -65,31 +66,34 @@ system.addForce(MonteCarloBarostat(1*bar, temperature*kelvin))
 system.addForce(AndersenThermostat(temperature*kelvin, 1/picosecond))
 
 integrator = LangevinMiddleIntegrator(temperature*kelvin, 1/picosecond, 0.0005*picoseconds)
-minimizer = Simulation(modeller.topology, system, integrator)
-minimizer.context.setPositions(modeller.positions)
+minimizer = Simulation(unminimized_modeller.topology, system, integrator)
+minimizer.context.setPositions(unminimized_modeller.positions)
 minimizer.context.setVelocitiesToTemperature(temperature)
 minimizer.minimizeEnergy()
 minimized_positions = minimizer.context.getState(getPositions=True).getPositions()
 
-modeller.addSolvent(forcefield, boxSize=Vec3(box_dim, box_dim, box_dim)*nanometers,
+
+minimized_modeller = Modeller(minimizer.topology, minimized_positions)
+minimized_modeller.addSolvent(forcefield, boxSize=Vec3(box_dim, box_dim, box_dim)*nanometers,
                     ionicStrength=1*molar, positiveIon='K+', negativeIon='Cl-', model='tip4pew')
 
-PDBFile.writeFile(modeller.topology, modeller.positions,
-                  open(os.path.join(data_path, f'{pdbid}_struct{structid}_sol.pdb'), 'w'))
 
 integrator = LangevinMiddleIntegrator(temperature*kelvin, 1/picosecond, 0.0005*picoseconds)
-simulation = Simulation(modeller.topology, system, integrator)
+simulation = Simulation(minimizer.topology, system, integrator)
 simulation.context.setPositions(minimized_positions)
 simulation.context.setVelocitiesToTemperature(temperature)
 simulation.minimizeEnergy()
 
+PDBFile.writeFile(simulation.topology, simulation.context.getState(getPositions=True).getPositions(),
+                  open(os.path.join(data_path, f'{pdbid}_{identifier}{structid}_sol.pdb'), 'w'))
+
 simulation.step(1000)
 integrator = LangevinMiddleIntegrator(temperature*kelvin, 1/picosecond, timestep*picoseconds)
 simulation.reporters.append(XTCReporter(os.path.join(data_path,
-                                                     f'{pdbid}_struct{structid}_equil.xtc'), sampling_steps))
-simulation.reporters.append(StateDataReporter(os.path.join(data_path, f'{pdbid}_struct{structid}_equil.log'), sampling_steps,
+                                                     f'{pdbid}_{identifier}{structid}_equil.xtc'), sampling_steps))
+simulation.reporters.append(StateDataReporter(os.path.join(data_path, f'{pdbid}_{identifier}{structid}_equil.log'), sampling_steps,
                                               step=True, time=True, speed=True, remainingTime=True,
                                               totalSteps=simulation_steps, separator='\t'))
 # running simulation
 simulation.step(simulation_steps)
-simulation.saveCheckpoint(os.path.join(data_path, f'{pdbid}_struct{structid}_equil.chk'))
+simulation.saveCheckpoint(os.path.join(data_path, f'{pdbid}_{identifier}{structid}_equil.chk'))

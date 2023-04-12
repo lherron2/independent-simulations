@@ -3,7 +3,6 @@
 from openmm.app import *
 from openmm import *
 from openmm.unit import *
-from openmmplumed import PlumedForce
 from mdtraj.reporters import XTCReporter
 import os
 import yaml
@@ -15,16 +14,17 @@ def load_yaml(file):
             yaml_loaded = yaml.safe_load(stream)
     return yaml_loaded
 
-def load_plumed_file(plumed_path, data_path, sampling_freq):
-    """
-    Currently unused but may be used in the future.
-    """
-    with open(plumed_path, 'r') as f:
-        plumed_str = f.read()
-    os.makedirs(os.path.join(data_path, f"colvar"), exist_ok=True)
-    torsion_path = os.path.join(data_path, f"colvar/structure{structid}.torsions.colvar")
-    plumed_str = plumed_str.replace("COLVARPATH", torsion_path).replace("COLVARSTRIDE", str(sampling_freq))
-    return plumed_str
+def bash(command):
+    "submits a command to the terminal. Particularly useful for text manipulation commands"
+    output = subprocess.check_output(command, shell=True).decode("utf-8").rstrip().split("\n")
+    return output
+
+def get_simulation_index(data_path, pdbid, structid, identifier):
+    xtc_string=f"{pdbid}_{identifier}{structid}_"
+    xtc_list = bash(f"ls {data_path} | '{xtc_string}[0-9]*\.xtc'")
+    simulation_indices = np.array([int(i) for i in xtc_list.split(xtc_string)[-1].split('.xtc')[0]])
+    simulation_index = max(simulation_indices) + 1
+    return simulation_index
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--master_yaml', required=True,
@@ -39,6 +39,7 @@ prod_params = load_yaml(args.sim_yaml)
 temperature = int(prod_params["temperature"])
 pdbid = master_prod_params["pdbid"]
 structid = int(prod_params["structid"])
+identifier = master_prod_params["identifier"]
 resume = master_prod_params["resume"]
 sampling_freq = int(master_prod_params["sampling_freq"])
 timestep = float(master_prod_params["timestep"])
@@ -50,7 +51,7 @@ data_path = data_path.replace("PDBID", pdbid).replace("STRUCTID", str(structid))
 sampling_steps = int(sampling_freq / timestep)
 total_steps = int(simulation_length / timestep)
 
-pdb = PDBFile(os.path.join(data_path, f'{pdbid}_struct{structid}_sol.pdb'))
+pdb = PDBFile(os.path.join(data_path, f'{pdbid}_{identifier}{structid}_sol.pdb'))
 forcefield = ForceField('amber14/RNA.Shaw_charmm22-ions.xml', 'amber14/tip4pd_desres.xml')
 #pdb.topology.setUnitCellDimensions(Vec3(box_dim, box_dim, box_dim)*nanometers)
 system = forcefield.createSystem(pdb.topology, nonbondedMethod=PME,
@@ -63,22 +64,23 @@ integrator = LangevinMiddleIntegrator(temperature*kelvin, 1/picosecond, timestep
 simulation = Simulation(pdb.topology, system, integrator)
 
 if not resume:
-    simulation.loadCheckpoint(os.path.join(data_path, f'{pdbid}_struct{structid}_equil.chk'))
+    simulation_idx = 0
+    simulation.loadCheckpoint(os.path.join(data_path, f'{pdbid}_{identifier}{structid}_equil.chk'))
     remaining_steps = total_steps
 else:
-    simulation.loadCheckpoint(os.path.join(data_path, f'{pdbid}_struct{structid}.chk'))
-    steps_simulated = np.loadtxt(os.path.join(data_path, f'{pdbid}_struct{structid}.energy'),
-                                 skiprows=1, delimiter=',')[-1][0]
+    simulation_idx = get_simulation_idx(data_path, pdbid, structid, identifier)
+    simulation.loadCheckpoint(os.path.join(data_path, f'{pdbid}_{identifier}{structid}.chk'))
+    steps_simulated = int(bash(f"tail -1 {os.path.join(data_path, f'{pdbid}_{identifier}{structid}.energy')}")[0].split(',')[0])
     remaining_steps = total_steps - steps_simulated
 
-simulation.reporters.append(XTCReporter(os.path.join(data_path, f'{pdbid}_struct{structid}.xtc'),
-                                        sampling_steps, append=resume))
-simulation.reporters.append(StateDataReporter(os.path.join(data_path, f'{pdbid}_struct{structid}.energy'),
+simulation.reporters.append(XTCReporter(os.path.join(data_path, f'{pdbid}_{identifier}{structid}_{simulation_idx}.xtc'),
+                                        sampling_steps, append=False))
+simulation.reporters.append(StateDataReporter(os.path.join(data_path, f'{pdbid}_{identifier}{structid}.energy'),
                                               sampling_steps, step=True, potentialEnergy=True, temperature=True,
                                               append=resume))
-simulation.reporters.append(StateDataReporter(os.path.join(data_path, f'{pdbid}_struct{structid}.log'), sampling_steps,
+simulation.reporters.append(StateDataReporter(os.path.join(data_path, f'{pdbid}_{identifier}{structid}.log'), sampling_steps,
                                               step=True, time=True, speed=True, remainingTime=True, append=resume,
                                               totalSteps=total_steps, separator='\t'))
-simulation.reporters.append(CheckpointReporter(os.path.join(data_path, f'{pdbid}_struct{structid}.chk'), sampling_steps))
+simulation.reporters.append(CheckpointReporter(os.path.join(data_path, f'{pdbid}_{identifier}{structid}.chk'), sampling_steps))
 
 simulation.step(remaining_steps)
