@@ -49,7 +49,7 @@ for sim_idx in range(num_sims):
     traj_filename = os.path.join(data_path, traj)
     try:
         for i, chunk in enumerate(md.iterload(traj_filename, top=top_filename, chunk=10)):
-            if sim_idx == 0:
+            if sim_idx == 0 and i == 0:
                 no_sol = chunk.remove_solvent()
             else:
                 no_sol = no_sol.join(chunk.remove_solvent())
