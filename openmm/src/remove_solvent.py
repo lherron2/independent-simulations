@@ -48,7 +48,7 @@ for sim_idx in range(num_sims):
     traj = f'{args.pdbid}_{identifier}{args.structid}_{sim_idx}.xtc'
     traj_filename = os.path.join(data_path, traj)
     try:
-        for i, chunk in enumerate(md.iterload(traj_filename, top=top_filename, chunk=1000)):
+        for i, chunk in enumerate(md.iterload(traj_filename, top=top_filename, chunk=10)):
             if sim_idx == 0:
                 no_sol = chunk.remove_solvent()
             else:
