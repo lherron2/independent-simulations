@@ -6,6 +6,9 @@ import re
 import mdtraj as md
 import argparse
 
+def regex_list(regex, l):
+    return list(filter(re.compile(regex).match, l))
+
 def load_traj_from_xtc(root_path, identifier, pdbid, topology, parameter='temperature'):
     dirlist = get_simulation_dirs(root_path, identifier)
     traj_dict = {}

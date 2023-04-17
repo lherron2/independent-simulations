@@ -1,7 +1,8 @@
 #!/bin/bash
 #SBATCH -t 02:00:00
 #SBATCH --ntasks-per-node=8
-#SBATCH --job-name=nosol
+#SBATCH --mem-per-cpu=10240
+#SBATCH --job-name=p_traj
 #SBATCH --mail-type=NONE    # Send email at begin and end of job
 #SBATCH --output=traj_postprocess.out
 

@@ -1,7 +1,8 @@
 #!/bin/bash
 #SBATCH -t 00:30:00
 #SBATCH --ntasks-per-node=8
-#SBATCH --job-name=nosol
+#SBATCH --mem-per-cpu=10240
+#SBATCH --job-name=p_diff
 #SBATCH --mail-type=NONE    # Send email at begin and end of job
 #SBATCH --output=diff_postprocess.out
 
@@ -12,7 +13,8 @@ conda activate analysis
 pdb=$1
 
 project_path="/home/lherron/scratch/RNAfold"
-diffusion_path="${project_path}/${pdb}/DDIM/samples"
+#diffusion_path="${project_path}/${pdb}/DDIM/samples"
+diffusion_path="/home/lherron/scratch/repos/thermodynamic-diffusion/systems/${pdb}/experiments/gvecs/x0_mid_attn_sc/samples"
 data_path="${project_path}/${pdb}/data"
 
 # change according to your file system
