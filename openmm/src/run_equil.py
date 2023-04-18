@@ -65,11 +65,12 @@ system = forcefield.createSystem(unminimized_modeller.topology,
 system.addForce(MonteCarloBarostat(1*bar, temperature*kelvin))
 system.addForce(AndersenThermostat(temperature*kelvin, 1/picosecond))
 
-integrator = LangevinMiddleIntegrator(temperature*kelvin, 1/picosecond, 0.0005*picoseconds)
+integrator = LangevinMiddleIntegrator(temperature*kelvin, 1/picosecond, 0.001*picoseconds)
 minimizer = Simulation(unminimized_modeller.topology, system, integrator)
 minimizer.context.setPositions(unminimized_modeller.positions)
 minimizer.context.setVelocitiesToTemperature(temperature)
 minimizer.minimizeEnergy()
+minimizer.step(1000)
 minimized_positions = minimizer.context.getState(getPositions=True).getPositions()
 
 
