@@ -26,7 +26,9 @@ Now, to generate starting structures, run `gen_seeds.sh $PDB 0 $num_structs $min
 
 Simulations are parameterized by four files: ```master_equil.yaml``` and ```master_prod.yaml```, and  ```sim_equil.yaml``` and ```sim_prod.yaml```. The ```master.yaml``` files contain parameters which are shared across the independent simulations, while the ```sim.yaml``` files contain parameters which are unique to a particular simulation (e.g. temperature). Edit these files to change things such as the integration timestep or the simulation length.
 
-Then run simulations with either ```run_equil.sh $PDB $sim_idx``` and ```run_prod.sh $PDB $sim_idx```, where `$sim_idx` refers to the index of a simulation directory setup by `gen_seeds.sh`. For `run_prod.sh`, to resume simulations set the `resume` variable in `master_prod.yaml` to `True`. Make sure `resume = False` if starting from scratch. (Pro tip for clusters supporting a scavenger partition: set the first round of simulations to run for a very short amount of time (but greater than `sampling_freq`) so that a checkpoint is created. Once the short simulations finish, set `resume=True` and re-submit the jobs to the scavenger partition. They will run when the cluster is being underutilized while yielding to more high-priority simulations.) 
+Then run simulations with either ```run_equil.sh $PDB $sim_idx``` and ```run_prod.sh $PDB $sim_idx```, where `$sim_idx` refers to the index of a simulation directory setup by `gen_seeds.sh`. For `run_prod.sh`, to resume simulations set the `resume` variable in `master_prod.yaml` to `True`. Make sure `resume = False` if starting from scratch. 
+
+Pro tip for clusters supporting a scavenger partition: set the first round of simulations to run in the gpu partition for a very short amount of time (but greater than `sampling_freq`) so that a checkpoint is created. Once the short simulations finish, set `resume=True` and re-submit the jobs to the scavenger partition. They will run when the cluster is being underutilized while yielding to more high-priority simulations.
 
 ## EXAMPLE
 
