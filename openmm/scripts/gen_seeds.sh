@@ -25,7 +25,7 @@ energy_file="${PROJECT_PATH}/${pdb}/data/${pdb}_rosetta_nosol_energies.npy"
 annot_file="${PROJECT_PATH}/${pdb}/data/${pdb}_rosetta_annot.npy"
 
 mkdir -p $output_dir
-cp "${REPOROOT}/templates/config_templates/*" $output_dir
+cp "${REPOROOT}/templates/config_templates/"* $output_dir
 sed -i "s+PDBID+$pdb+g" "${output_dir}/master_equil.yaml"
 sed -i "s+PDBID+$pdb+g" "${output_dir}/master_prod.yaml"
 
@@ -42,6 +42,18 @@ python -u ../src/gen_temps.py --min_temp $min_temp \
                               --num_structs $num_structs \
                               --output_dir $output_dir \
 
-for i in {0..$num_structs}; do
-    python -u "../src/prep_sim_yaml.py" --f "${output_dir}/sim_equil.yaml" --structid $i --temperatures "${output_dir}/temperatures.npy"
-    python -u "../src/prep_sim_yaml.py" --f "${output_dir}/sim_prod.yaml" --structid $i --temperatures "${output_dir}/temperatures.npy"
+for i in $(seq $num_structs); do
+    echo $i
+    cp "${output_dir}/sim_equil.yaml" "${output_dir}/struct${i}/sim_equil.yaml"
+    cp "${output_dir}/sim_prod.yaml" "${output_dir}/struct${i}/sim_prod.yaml"
+
+    python -u ../src/prep_sim_yaml.py --yaml "${output_dir}/sim_equil.yaml" \
+                                      --sim_dir "${output_dir}/struct${i}" \
+                                      --structid $i \
+                                      --temperatures "${output_dir}/temperatures.npy"
+
+    python -u ../src/prep_sim_yaml.py --yaml "${output_dir}/sim_prod.yaml" \
+                                      --sim_dir "${output_dir}/struct${i}" \
+                                      --structid $i \
+                                      --temperatures "${output_dir}/temperatures.npy" 
+done

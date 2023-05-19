@@ -2,9 +2,12 @@
 
 import argparse
 import numpy as np
+import os
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--yaml',
+                    type=str, help="path to yaml file required")
+parser.add_argument('--sim_dir',
                     type=str, help="path to yaml file required")
 parser.add_argument('--structid',
                     type=int, help="structid required")
@@ -19,6 +22,6 @@ with open(args.yaml, 'r') as f:
 yaml = yaml.replace("TEMP", str(temp)).replace("STRUCTID", str(args.structid))
 
 yaml_fname = args.yaml.split('/')[-1]
-with open(f"struct{args.structid}/" + yaml_fname, 'w') as f:
+with open(os.path.join(args.sim_dir, yaml_fname), 'w') as f:
     f.write(yaml)
 
