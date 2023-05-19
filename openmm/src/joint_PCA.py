@@ -16,7 +16,7 @@ args = parser.parse_args()
 diffusion_file = os.path.join(args.data_path, f"{args.pdbid}_DDPM_gvecs.npy")
 diffusion_dict = load_dict_from_npy(diffusion_file)
 
-gvec_file = os.path.join(args.data_path, f"{args.pdbid}_MD_gvecs.npy")
+gvec_file = os.path.join(args.data_path, f"{args.pdbid}_MD_gvecs_flattened.npy")
 gvec_dict = load_dict_from_npy(gvec_file)
 
 diffusion_gvec_arr = array_from_dict(diffusion_dict)
