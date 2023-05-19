@@ -3,9 +3,9 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --partition=gpu
 #SBATCH --gpus=a100:1
-#SBATCH --job-name=1anr
+#SBATCH --job-name=equil
 #SBATCH --mail-type=NONE    # Send email at begin and end of job
-#SBATCH --output=job.out
+#SBATCH --output=outfiles/equil.out
 
 source $HOME/.bashrc
 source ../sourceme.sh
