@@ -1,0 +1,10 @@
+pdbid: PDBID
+identifier: struct
+iter: 0
+sampling_freq: 25
+timestep: 0.004
+simulation_length: 10000
+solute_ff: amber14/RNA.Shaw_charmm22-ions.xml
+solvent_ff: amber14/tip4pd_desres.xml
+
+seed_path: PROJECTPATH/PDBID/PDBID_iterITER/IDENTIFIERSTRUCTID/PDBID_IDENTIFIERSTRUCTID.pdb

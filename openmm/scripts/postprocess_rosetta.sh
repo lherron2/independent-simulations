@@ -1,13 +1,14 @@
 #!/bin/bash
 #SBATCH -t 16:00:00
 #SBATCH --ntasks-per-node=1
-#SBATCH --job-name=energies
+#SBATCH --job-name=p_rosetta
 #SBATCH --mail-type=NONE    # Send email at begin and end of job
 #SBATCH --output=outfiles/postprocess_rosetta.out
 
+source $HOME/.bashrc
 source ../sourceme.sh
 # sourceme contains $CONDA and $PROJECT_PATH
-. "$CONDA/etc/profile.d/conda.sh"
+#. "${CONDA_PREFIX_1}/etc/profile.d/conda.sh"
 conda activate analysis
 
 pdb=$1
@@ -27,15 +28,16 @@ python -u ../src/fix_traj.py --broken_traj $broken_traj \
                             --broken_top $broken_top \
                             --fixed_traj $fixed_traj \
                             --fixed_top $fixed_top \
-
+#
 
 ### COMPUTING GVECS FOR FIXED TRAJECTORIES ###
 
+mkdir -p "${PROJECT_PATH}/${pdb}/data"
 gvec_file="${PROJECT_PATH}/${pdb}/data/${pdb}_rosetta_gvecs.npy"
 
-python -u ../src/compute_gvecs.py --traj $fixed_traj \
-                                  --top $fixed_top \
-                                  --outfile $gvec_file \
+#python -u ../src/compute_gvecs.py --traj $fixed_traj \
+#                                  --top $fixed_top \
+#                                  --outfile $gvec_file \
 
 ### COMPUTING ANNOTATIONS FOR FIXED TRAJECTORIES ###
 

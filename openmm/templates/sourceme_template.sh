@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export PATH="$PATH:REPOPATH/src"
+CONDA=${CONDA_PREFIX_1}
+REPOROOT="REPOPATH"
+PROJECT_PATH="REPOPATH/experiments"
