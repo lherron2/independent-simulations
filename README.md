@@ -26,10 +26,37 @@ Now, to generate starting structures, run `gen_seeds.sh $PDB 0 $num_structs $min
 
 Simulations are parameterized by four files: ```master_equil.yaml``` and ```master_prod.yaml```, and  ```sim_equil.yaml``` and ```sim_prod.yaml```. The ```master.yaml``` files contain parameters which are shared across the independent simulations, while the ```sim.yaml``` files contain parameters which are unique to a particular simulation (e.g. temperature). Edit these files to change things such as the integration timestep or the simulation length.
 
-Then run simulations with either ```run_equil.sh $PDB $sim_idx``` and ```run_prod.sh $PDB $sim_idx```, where `$sim_idx` refers to the index of a simulation directory setup by `gen_seeds.sh`. For `run_prod.sh`, to resume simulations set the `resume` variable in `master_prod.yaml` to `True`. Make sure `resume = False` if starting from scratch. 
+Then equilibrate your system with
+```
+for sim_idx in {0..$num_structs}; do
+run_equil.sh $PDB $sim_idx;
+done
+``` 
+and then run a production simulation with
+```
+for sim_idx in {0..$num_structs}; do
+run_prod.sh $PDB $sim_idx;
+done
+```
+where `$sim_idx` refers to the index of a simulation directory setup by `gen_seeds.sh`. For `run_prod.sh`, to resume simulations set the `resume` variable in `master_prod.yaml` to `True`. Make sure `resume = False` if starting from scratch. 
 
 Pro tip for clusters supporting a scavenger partition: set the first round of simulations to run in the gpu partition for a very short amount of time (but greater than `sampling_freq`) so that a checkpoint is created. Once the short simulations finish, set `resume=True` and re-submit the jobs to the scavenger partition. They will run when the cluster is being underutilized while yielding to more high-priority simulations.
 
+Once the simulation are complete, run 
+```
+for sim_idx in {0..$num_structs}; do
+remove_solvent.sh $PDB $sim_idx;
+done
+```
+and
+```
+for sim_idx in {0..$num_structs}; do
+trjcat.sh $PDB $sim_idx;
+done
+```
+The former will remove solvent from the `xtc` files produced during simulation, while the latter will concatenate all of the `xtc` files together to for a continuous trajectory. These are the trajectories that will be used to create the diffusion dataset and in later analysis.
+
+Then, run `postprocess_simulations.py $PDB` to compute relevant quantities for the simulation. Once of these quantities is G vectors (as defined in XXX), which will be used to create a dataset to train a diffusion model with. To create the dataset, run `gvec_to_dataset.sh $PDB`, which will write the dataset to `$PROJECT_PATH/$PDB/data/`
 ## EXAMPLE
 
 The provided example will run two simulations of HIV-TAR RNA structures (pdbid: 1anr) at 310K and 350K.
