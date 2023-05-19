@@ -14,13 +14,19 @@ conda activate openmm
 cp ff/* $CONDA_PREFIX/lib/python3.10/site-packages/openmm/app/data/amber14/
 ```
 
+Initialize the `sourceme.sh` file by running `./configure.sh`. This will set the `$PROJECT_PATH` variable to be `independent-simulations/openmm/experiments`. This path can be changed manually by the user.
+
 ## USAGE
 
-Simulations are parameterized by four files: ```master_equil.yaml``` and ```master_prod.yaml```, and  ```sim_equil.yaml``` and ```sim_prod.yaml```. The ```master.yaml``` files contain parameters which are shared across independent simulations, while the ```sim.yaml``` files contain parameters which are unique to a particular simulation (e.g. temperature).
+Currently this tutorial assumes that the Rosetta outputs for your RNA sequence are located in `$PROJECT_PATH/$PDB/rosetta` as a `.xtc` trajectory file and a `.pdb` topology file. In the future the documentation will be updated to include generating an ensemble of initial structures using Rosetta.
 
-To run simulations configure the ```*.yaml``` files for your system. Then distribute the ```*.yaml``` files to your simulation directories with ```prep_sim_yaml.py --f sim_equil.yaml --structid 0 --temperatures temperatures.npy```.
+The structures produced by Rosetta will likely be missing atoms required by the forcefield, and to choose reasonable initial conditions to being simulations from we need to evaluate the forcefield for each structure along with the number of well-formed base pairs. To do this run `postprocess_rosetta.sh $PDB`, which will fix the rosetta outputs and write energy (`$PDB_rosetta_nosol_energies.npy`) and base-pair (`$PDB_rosetta_annot.npy`) files into `$PROJECT_PATH/$PDB/data/`.
 
-Then run simulations with either ```submit_run_equil_CUDA.sh``` and ```submit_run_prod_CUDA.sh```, editing the contents of the files to run on your HPC cluster.
+Now, to generate starting structures, run `gen_seeds.sh $PDB 0 $num_structs $min_temp $max_temp`, which will create a directory `$PDB_iter0/` in `$PROJECT_PATH/$PDB/rosetta` containing `$num_structs` initial starting structures, with temperatures evenly spaced between `$min_temp` and `$max_temp`. The second argument is the simualtion iteration which can be modified if multiple rounds of simulation are performed.
+
+Simulations are parameterized by four files: ```master_equil.yaml``` and ```master_prod.yaml```, and  ```sim_equil.yaml``` and ```sim_prod.yaml```. The ```master.yaml``` files contain parameters which are shared across the independent simulations, while the ```sim.yaml``` files contain parameters which are unique to a particular simulation (e.g. temperature). Edit these files to change things such as the integration timestep or the simulation length.
+
+Then run simulations with either ```run_equil.sh $PDB $sim_idx``` and ```run_prod.sh $PDB $sim_idx```, where `$sim_idx` refers to the index of a simulation directory setup by `gen_seeds.sh`. For `run_prod.sh`, to resume simulations set the `resume` variable in `master_prod.yaml` to `True`. Make sure `resume = False` if starting from scratch. (Pro tip for clusters supporting a scavenger partition: set the first round of simulations to run for a very short amount of time (but greater than `sampling_freq`) so that a checkpoint is created. Once the short simulations finish, set `resume=True` and re-submit the jobs to the scavenger partition. They will run when the cluster is being underutilized while yielding to more high-priority simulations.) 
 
 ## EXAMPLE
 
