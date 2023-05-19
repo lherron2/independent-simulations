@@ -14,7 +14,7 @@ conda activate openmm
 cp ff/* $CONDA_PREFIX/lib/python3.10/site-packages/openmm/app/data/amber14/
 ```
 
-Initialize the `sourceme.sh` file by running `./configure.sh`. This will set the `$PROJECT_PATH` variable to be `independent-simulations/openmm/experiments`. This path can be changed manually by the user.
+Initialize the `sourceme.sh` file by running `./configure.sh`. This will set the `$PROJECT_PATH` variable to be `openmm/experiments`. This path can be changed manually by the user.
 
 ## USAGE
 
