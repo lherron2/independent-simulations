@@ -61,6 +61,12 @@ def compute_gvec_from_traj(traj):
     gvecs_flattened = gvecs.reshape(n_samp,-1)
     return gvecs, gvecs_flattened
 
+def compute_rvec_from_traj(traj):
+    rvecs,seq = bb.dump_rvec_traj(traj)
+    (n_samp, _, _, _) = rvecs.shape
+    rvecs_flattened = rvecs.reshape(n_samp,-1)
+    return rvecs, rvecs_flattened
+
 def annotate_base_pairs(traj, regex='(?!XXX)'):
     """
     regex excludes misformed base pairs.

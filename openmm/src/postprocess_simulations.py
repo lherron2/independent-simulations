@@ -2,7 +2,7 @@ import os
 import numpy as np
 import mdtraj as md
 import argparse
-from traj_tools import load_traj_from_xtc, compute_gvec_from_traj, annotate_base_pairs
+from traj_tools import load_traj_from_xtc, compute_gvec_from_traj, compute_rvec_from_traj, annotate_base_pairs
 from simulation import load_config, replace_wildcards, add_args
 from utils import get_simulation_dirs, convert_key_type, sort_dict_by_keys
 
@@ -60,6 +60,19 @@ gvec_file = os.path.join(args.data_path, f"{master_config.pdbid}_MD_gvecs.npy")
 gvec_flattened_file = os.path.join(args.data_path, f"{master_config.pdbid}_MD_gvecs_flattened.npy")
 np.save(gvec_file, gvec_dict)
 np.save(gvec_flattened_file, gvec_flattened_dict)
+
+print("computing rvecs ...")
+rvec_dict = {}
+rvec_flattened_dict = {}
+for k, traj in traj_dict.items():
+    print(k)
+    rvecs, rvecs_flattened = compute_rvec_from_traj(traj)
+    rvec_dict[k] = rvecs
+    rvec_flattened_dict[k] = rvecs_flattened
+rvec_file = os.path.join(args.data_path, f"{master_config.pdbid}_MD_rvecs.npy")
+rvec_flattened_file = os.path.join(args.data_path, f"{master_config.pdbid}_MD_rvecs_flattened.npy")
+np.save(rvec_file, rvec_dict)
+np.save(rvec_flattened_file, rvec_flattened_dict)
 
 # computing base-pairs and saving in npy file
 print("computing annots ...")

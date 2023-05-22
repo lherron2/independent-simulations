@@ -21,6 +21,8 @@ data_path="${PROJECT_PATH}/${pdb}/data/"
 # change according to your file system
 src_path="/home/lherron/scratch/repos/independent-simulations/openmm/src"
 
+cp "${root_path}/struct0/${pdb}_struct0_nosol.pdb" "${root_path}/${pdb}_nosol.pdb"
+
 python -u ${src_path}/postprocess_simulations.py --root_path $root_path \
                                                  --data_path $data_path \
                                                  --topology $topology \
