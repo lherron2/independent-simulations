@@ -1,0 +1,3 @@
+[submodule "thermodynamic-diffusion"]
+	path = thermodynamic-diffusion
+	url = https://github.com/lherron2/thermodynamic-diffusion
