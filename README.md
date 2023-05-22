@@ -96,6 +96,11 @@ done
 sbatch postprocess_traj.sh 1zih
 
 sbatch gvec_to_dataset.sh 1zih
+
+# computing energy w/ 2.5A solvation shell
+for i in {0..4}; do
+  sbatch compute_solvated_energy 1zih $i 2.5
+done
 ```
 
 Note that the submission scripts are configured to request GPU nodes from UMD's HPC computing cluster. You may have to edit the script to be request the correct resources from your HPC cluster. If `sbatch` is not available `bash` can be used instead.
