@@ -18,8 +18,8 @@ module load cuda
 
 pdb=$1
 structid=$2
-
-master_config="/home/lherron/scratch/RNAfold/${pdb}/${pdb}_iter0/master_equil.yaml"
-sim_config="/home/lherron/scratch/RNAfold/${pdb}/${pdb}_iter0/struct${structid}/sim_equil.yaml"
+echo $PROJECT_PATH
+master_config="${PROJECT_PATH}/${pdb}/${pdb}_iter0/master_equil.yaml"
+sim_config="${PROJECT_PATH}/${pdb}/${pdb}_iter0/struct${structid}/sim_equil.yaml"
 
 python -u ../src/equilibration.py --master_config $master_config --sim_config $sim_config

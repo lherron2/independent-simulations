@@ -28,6 +28,8 @@ mkdir -p $output_dir
 cp "${REPOROOT}/templates/config_templates/"* $output_dir
 sed -i "s+PDBID+$pdb+g" "${output_dir}/master_equil.yaml"
 sed -i "s+PDBID+$pdb+g" "${output_dir}/master_prod.yaml"
+sed -i "s+PROJECTPATH+$PROJECT_PATH+g" "${output_dir}/master_equil.yaml"
+sed -i "s+PROJECTPATH+$PROJECT_PATH+g" "${output_dir}/master_prod.yaml"
 
 python -u ../src/gen_seeds.py --pdbid $pdb \
                               --traj $traj \
@@ -42,7 +44,7 @@ python -u ../src/gen_temps.py --min_temp $min_temp \
                               --num_structs $num_structs \
                               --output_dir $output_dir \
 
-for i in $(seq $num_structs); do
+for i in $(seq 0 $(($num_structs-1))); do
     echo $i
     cp "${output_dir}/sim_equil.yaml" "${output_dir}/struct${i}/sim_equil.yaml"
     cp "${output_dir}/sim_prod.yaml" "${output_dir}/struct${i}/sim_prod.yaml"
