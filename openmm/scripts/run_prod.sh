@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-#SBATCH -t 120:00:00
+#SBATCH -t 02:00:00
 #SBATCH --ntasks-per-node=1
-#SBATCH --partition=scavenger
+#SBATCH --partition=gpu
 #SBATCH --gpus=a100:1
-#SBATCH --job-name=1anr
+#SBATCH --job-name=prod
 #SBATCH --mail-type=NONE    # Send email at begin and end of job
-#SBATCH --output=job.out
+#SBATCH --output=outfiles/prod.out
 
 source $HOME/.bashrc
 source ../sourceme.sh
@@ -16,11 +16,10 @@ conda activate analysis
 module purge
 module load cuda
 
-
 pdb=$1
 structid=$2
 
-master_config="/home/lherron/scratch/RNAfold/${pdb}/${pdb}_iter0/master_prod.yaml"
-sim_config="/home/lherron/scratch/RNAfold/${pdb}/${pdb}_iter0/struct${structid}/sim_prod.yaml"
+master_config="${PROJECT_PATH}/${pdb}/${pdb}_iter0/master_prod.yaml"
+sim_config="${PROJECT_PATH}/${pdb}/${pdb}_iter0/struct${structid}/sim_prod.yaml"
 
 ../src/simulate.py --master_config $master_config --sim_config $sim_config

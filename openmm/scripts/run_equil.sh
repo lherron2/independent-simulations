@@ -18,7 +18,6 @@ module load cuda
 
 pdb=$1
 structid=$2
-echo $PROJECT_PATH
 master_config="${PROJECT_PATH}/${pdb}/${pdb}_iter0/master_equil.yaml"
 sim_config="${PROJECT_PATH}/${pdb}/${pdb}_iter0/struct${structid}/sim_equil.yaml"
 
