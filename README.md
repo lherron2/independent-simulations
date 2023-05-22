@@ -59,49 +59,28 @@ The former will remove solvent from the `xtc` files produced during simulation, 
 Then, run `postprocess_simulations.py $PDB` to compute relevant quantities for the simulation. Once of these quantities is G vectors (as defined in XXX), which will be used to create a dataset to train a diffusion model with. To create the dataset, run `gvec_to_dataset.sh $PDB`, which will write the dataset to `$PROJECT_PATH/$PDB/data/`
 ## EXAMPLE
 
-The provided example will run two simulations of HIV-TAR RNA structures (pdbid: 1anr) at 310K and 350K.
+The provided example will run five simulations of a GCAA tetraloop RNA (pdbid: 1zih) at temperatures between 310K and 410K.
 
 First we have to activate the conda environment and add the python scripts located in ```openmm/src``` to the system ```$PATH``` by running
 ```
-conda activate openmm
 cd openmm
-source sourceme.sh
+./configure.sh
 ```
 
 To run the provided example, first substitute the data path for your system into the master_prod.yaml and master_equil.yaml by executing:
 ```
-cd example
-sed -i "s+DATAPATH+$PWD/structSTRUCTID+g" "yaml/master_prod.yaml"
-sed -i "s+DATAPATH+$PWD/structSTRUCTID+g" "yaml/master_equil.yaml"
-```
-and distribute the simulation-specific configuration files to the simulation directories via:
-```
-for i in {0..1}; do
-	prep_sim_yaml.py --yaml yaml/sim_equil.yaml --structid $i --temperatures temperatures.npy
-	prep_sim_yaml.py --yaml yaml/sim_prod.yaml --structid $i --temperatures temperatures.npy
+sbatch postprocess_rosetta.sh 1zih;
+sbatch gen_seeds.sh 1zih 0 5 310 410;
+
+for i in {0..4}; do
+run_equil.sh 1zih $i;
 done
-```
 
-Then submit the job to your HPC resources by executing:
-```
-cd ../scripts
-for i in {0..1}; do
-	sbatch submit_run_equil_CUDA.sh 1anr $i
+for i in {0..4}; do
+run_prod.sh 1zih $i;
 done
-```
-Note that the submission scripts are configured to request GPU nodes from UMD's HPC computing cluster. You may have to edit the script to be request the correct resources from your HPC cluster. 
 
-Once the equilibration finishes, run the production simulation by executing:
-```
-for i in {0..1}; do
-	sbatch submit_run_prod_CUDA.sh 1anr $i
-done
 ```
 
-## CONVENTIONS
-
-The simulation directories should be enumerated as ```struct{i}/``` and contain a file names as ```{pdbid}_struct{i}.pdb```. Paths can be configured as needed for files in the ```scripts/``` and ```config/``` directories.
-
-## TO-DO
-+ Change the ```examples/yaml``` directory to ```examples/config```.
+Note that the submission scripts are configured to request GPU nodes from UMD's HPC computing cluster. You may have to edit the script to be request the correct resources from your HPC cluster. If `sbatch` is not available `bash` can be used instead.
 
