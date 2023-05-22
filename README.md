@@ -59,7 +59,7 @@ The former will remove solvent from the `xtc` files produced during simulation, 
 Then, run `postprocess_simulations.py $PDB` to compute relevant quantities for the simulation. Once of these quantities is G vectors (as defined in XXX), which will be used to create a dataset to train a diffusion model with. To create the dataset, run `gvec_to_dataset.sh $PDB`, which will write the dataset to `$PROJECT_PATH/$PDB/data/`
 ## EXAMPLE
 
-The provided example will run five simulations of a GCAA tetraloop RNA (pdbid: 1zih) at temperatures between 310K and 410K.
+The provided example located in `openmm/experiments/` will run five simulations of a GCAA tetraloop RNA (pdbid: 1zih) at temperatures between 310K and 410K.
 
 First we have to activate the conda environment and add the python scripts located in ```openmm/src``` to the system ```$PATH``` by running
 ```
@@ -74,13 +74,28 @@ sbatch postprocess_rosetta.sh 1zih;
 sbatch gen_seeds.sh 1zih 0 5 310 410;
 
 for i in {0..4}; do
-  run_equil.sh 1zih $i;
+  sbatch run_equil.sh 1zih $i;
 done
 
 for i in {0..4}; do
-  run_prod.sh 1zih $i;
+  sbatch run_prod.sh 1zih $i;
 done
 
+```
+
+Once the simulations are done running, postprocess them by running
+```
+for i in {0..4}; do
+  sbatch remove_solvent.sh 1zih $i;
+done
+
+for i in {0..4}; do
+  sbatch trjcat.sh 1zih $i;
+done
+
+sbatch postprocess_traj.sh 1zih
+
+sbatch gvec_to_dataset.sh 1zih
 ```
 
 Note that the submission scripts are configured to request GPU nodes from UMD's HPC computing cluster. You may have to edit the script to be request the correct resources from your HPC cluster. If `sbatch` is not available `bash` can be used instead.
