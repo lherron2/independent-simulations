@@ -5,16 +5,61 @@
 #SBATCH --mail-type=NONE    # Send email at begin and end of job
 #SBATCH --output=energies.out
 
+
+DOCSTRING=$"""
+Evaluates the forcefield over a solvated trajectory to compute energies.\n
+\n
+Args:\n
+--pdb: The pdb ID of the structure (or some other identifier).\n
+--iter: The 'round' of simulations being performed.\n
+--structid: The index of the simulation.\n
+--rad: Cutoff radius of the solvation shell.\n
+"""
+
+POSITIONAL_ARGS=()
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -h|--help)
+      echo -e $DOCSTRING
+      exit 1
+      ;;
+    --pdb)
+      pdb="$2"
+      shift
+      shift
+      ;;
+    --iter)
+      iter="$2"
+      shift
+      shift
+      ;;
+    --structid)
+      structid=$2
+      shift
+      shift
+      ;;
+    --rad)
+      rad=$2
+      shift
+      shift
+      ;;
+    -*|--*)
+      echo "Unknown option $1"
+      exit 1
+      ;;
+    *)
+      POSITIONAL_ARGS+=("$1") # save positional arg
+      shift # past argument
+      ;;
+  esac
+done
+
 source $HOME/.bashrc
 source ../sourceme.sh
-# sourceme contains $CONDA and $PROJECT_PATH
-#. "${CONDA_PREFIX_1}/etc/profile.d/conda.sh"
 conda activate analysis
 
 # INPUTS
-pdb=$1
-structid=$2
-rad=$3
 selection="resname [GACU]"
 
 # paths to simulation outputs

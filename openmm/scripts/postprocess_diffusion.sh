@@ -6,22 +6,49 @@
 #SBATCH --mail-type=NONE    # Send email at begin and end of job
 #SBATCH --output=outfiles/postprocess_diff.out
 
+DOCSTRING=$"""
+Combines DDPM samples into a single file.\n
+\n
+Args:\n
+--pdb: The pdb ID of the structure (or some other identifier).\n
+"""
+
+POSITIONAL_ARGS=()
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -h|--help)
+      echo -e $DOCSTRING
+      exit 1
+      ;;
+    --pdb)
+      pdb="$2"
+      shift
+      shift
+      ;;
+    -*|--*)
+      echo "Unknown option $1"
+      exit 1
+      ;;
+    *)
+      POSITIONAL_ARGS+=("$1") # save positional arg
+      shift # past argument
+      ;;
+  esac
+done
+
+set -- "${POSITIONAL_ARGS[@]}" # restore positional parameters
+
 source $HOME/.bashrc
 source ../sourceme.sh
-# sourceme contains $CONDA and $PROJECT_PATH
-. "$CONDA/etc/profile.d/conda.sh"
 conda activate analysis
 
-pdb=$1
 diffusion_path="/home/lherron/scratch/repos/thermodynamic-diffusion/systems/${pdb}/experiments/gvecs/10us/samples"
 data_path="${PROJECT_PATH}/${pdb}/data"
 subsample=1
 
-# change according to your file system
-src_path="/home/lherron/scratch/repos/independent-simulations/openmm/src"
-
-python -u ${src_path}/postprocess_diffusion.py --pdbid $pdb \
-                                               --diffusion_path $diffusion_path \
-                                               --subsample $subsample \
-                                               --data_path $data_path
+python -u "${SRCPATH}/postprocess_diffusion.py" --pdbid $pdb \
+                                                --diffusion_path $diffusion_path \
+                                                --subsample $subsample \
+                                                --data_path $data_path \
 

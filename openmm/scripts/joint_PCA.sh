@@ -6,17 +6,46 @@
 #SBATCH --mail-type=NONE    # Send email at begin and end of job
 #SBATCH --output=outfiles/pca.out
 
+
+DOCSTRING=$"""
+Projects the MD data and DDPM data into a shared space: The first two
+principal components of the MD data.\n
+\n
+Args:\n
+--pdb: The pdb ID of the structure (or some other identifier).\n
+"""
+
+POSITIONAL_ARGS=()
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -h|--help)
+      echo -e $DOCSTRING
+      exit 1
+      ;;
+    --pdb)
+      pdb="$2"
+      shift
+      shift
+      ;;
+    -*|--*)
+      echo "Unknown option $1"
+      exit 1
+      ;;
+    *)
+      POSITIONAL_ARGS+=("$1") # save positional arg
+      shift # past argument
+      ;;
+  esac
+done
+
+set -- "${POSITIONAL_ARGS[@]}" # restore positional parameters
+
 source $HOME/.bashrc
 source ../sourceme.sh
-# sourceme contains $CONDA and $PROJECT_PATH
-#. "${CONDA_PREFIX_1}/etc/profile.d/conda.sh"
 conda activate analysis
 
-pdb=$1
 data_path="${PROJECT_PATH}/${pdb}/data"
 
-# change according to your file system
-src_path="/home/lherron/scratch/repos/independent-simulations/openmm/src"
-
-python -u ${src_path}/joint_PCA.py --pdbid $pdb \
-                                   --data_path $data_path
+python -u "${SRCPATH}/joint_PCA.py" --pdbid $pdb \
+                                    --data_path $data_path
