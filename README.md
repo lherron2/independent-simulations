@@ -5,12 +5,12 @@ Install the openmm environment with:
 ```
 cd openmm
 # create conda environment for openmm
-conda env create -f openmm.yaml
+conda env create -f analysis.yaml
 ```
 
 Patch DESRES RNA force field files into conda openmm install via:
 ```
-conda activate openmm
+conda activate analysis
 cp ff/* $CONDA_PREFIX/lib/python3.10/site-packages/openmm/app/data/amber14/
 ```
 
