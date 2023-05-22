@@ -29,13 +29,13 @@ Simulations are parameterized by four files: ```master_equil.yaml``` and ```mast
 Then equilibrate your system with
 ```
 for sim_idx in {0..$num_structs}; do
-run_equil.sh $PDB $sim_idx;
+  sbatch run_equil.sh $PDB $sim_idx;
 done
 ``` 
 and then run a production simulation with
 ```
 for sim_idx in {0..$num_structs}; do
-run_prod.sh $PDB $sim_idx;
+  sbatch run_prod.sh $PDB $sim_idx;
 done
 ```
 where `$sim_idx` refers to the index of a simulation directory setup by `gen_seeds.sh`. For `run_prod.sh`, to resume simulations set the `resume` variable in `master_prod.yaml` to `True`. Make sure `resume = False` if starting from scratch. 
@@ -70,14 +70,15 @@ cd openmm
 To run the provided example, first substitute the data path for your system into the master_prod.yaml and master_equil.yaml by executing:
 ```
 sbatch postprocess_rosetta.sh 1zih;
+
 sbatch gen_seeds.sh 1zih 0 5 310 410;
 
 for i in {0..4}; do
-run_equil.sh 1zih $i;
+  run_equil.sh 1zih $i;
 done
 
 for i in {0..4}; do
-run_prod.sh 1zih $i;
+  run_prod.sh 1zih $i;
 done
 
 ```
