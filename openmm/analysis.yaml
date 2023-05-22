@@ -1,0 +1,16 @@
+name: analysis
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - openmm=7.7
+  - barnaba
+  - ipykernel
+  - mdanalysistests
+  - mdanalysis
+  - nb_conda
+  - parmed
+  - pymbar
+  - pdbfixer
+  - deeptime
+prefix: /home/lherron/scratch.tiwary-prj/lherron/miniconda/envs/analysis
