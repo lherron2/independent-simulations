@@ -13,4 +13,3 @@ dependencies:
   - pymbar
   - pdbfixer
   - deeptime
-prefix: /home/lherron/scratch.tiwary-prj/lherron/miniconda/envs/analysis
