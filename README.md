@@ -69,14 +69,18 @@ cd openmm
 
 To run the provided example, first substitute the data path for your system into the master_prod.yaml and master_equil.yaml by executing:
 ```
+# fixing rosetta outputs and computing clustering quantities
 sbatch postprocess_rosetta.sh 1zih;
 
+# selecting starting seeds based on clustering and assigning files and temperatures
 sbatch gen_seeds.sh 1zih 0 5 310 410;
 
+# running equilibration from master_equil.yaml
 for i in {0..4}; do
   sbatch run_equil.sh 1zih $i;
 done
 
+# running production from master_equil.yaml
 for i in {0..4}; do
   sbatch run_prod.sh 1zih $i;
 done
@@ -85,19 +89,23 @@ done
 
 Once the simulations are done running, postprocess them by running
 ```
+# concatenating production trajectories and removing solvent
 for i in {0..4}; do
   sbatch remove_solvent.sh 1zih $i;
 done
 
+# concatenating production trajectories while keeping solvent
 for i in {0..4}; do
   sbatch trjcat.sh 1zih $i;
 done
 
+# computing relevent quantities from desolvated trajectory
 sbatch postprocess_traj.sh 1zih
 
+# creating dataset for diffusion model
 sbatch gvec_to_dataset.sh 1zih
 
-# computing energy w/ 2.5A solvation shell
+# computing energy w/ 2.5A solvation shell from solvated trajectory
 for i in {0..4}; do
   sbatch compute_solvated_energy 1zih $i 2.5
 done
