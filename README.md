@@ -62,13 +62,13 @@ Then, run `postprocess_simulations.py --pdb $PDB` to compute relevant quantities
 
 The provided example located in `openmm/experiments/` will run five simulations of a GCAA tetraloop RNA (pdbid: 1zih) at temperatures between 310K and 410K.
 
-First we have to activate the conda environment and add the python scripts located in ```openmm/src``` to the system ```$PATH``` by running
+First we have to activate the conda environment and add the correct pathing by running:
 ```
 cd openmm
 ./configure.sh
 ```
 
-To run the provided example, first substitute the data path for your system into the master_prod.yaml and master_equil.yaml by executing:
+To run the provided example execute:
 ```
 # fixing rosetta outputs and computing clustering quantities
 sbatch postprocess_rosetta.sh --pdb 1zih;
@@ -88,7 +88,7 @@ done
 
 ```
 
-Once the simulations are done running, postprocess them by running
+Once the simulations are done running, postprocess them by running:
 ```
 # concatenating production trajectories and removing solvent
 for i in {0..4}; do
