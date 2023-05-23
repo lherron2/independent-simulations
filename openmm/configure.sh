@@ -24,7 +24,5 @@ done
 
 set -- "${POSITIONAL_ARGS[@]}" # restore positional parameters
 
-
-
 sed "s+REPOPATH+$PWD+g" templates/sourceme_template.sh > sourceme.sh
-sed "s+PROJECTPATH+$PROJECTPATH+g" templates/sourceme_template.sh > sourceme.sh
+sed -i "s+PROJECTPATH+$PROJECTPATH+g" sourceme.sh
