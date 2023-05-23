@@ -62,5 +62,5 @@ module load cuda
 master_config="${PROJECT_PATH}/${pdb}/${pdb}_iter${iter}/master_prod.yaml"
 sim_config="${PROJECT_PATH}/${pdb}/${pdb}_iter${iter}/struct${structid}/sim_prod.yaml"
 
-"${SRCPATH}/simulate.py" --master_config $master_config \
+python -u "${SRCPATH}/simulate.py" --master_config $master_config \
                          --sim_config $sim_config \
