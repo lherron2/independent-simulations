@@ -66,6 +66,7 @@ First we have to activate the conda environment and add the correct pathing by r
 ```
 cd openmm
 ./configure.sh
+cd scripts
 ```
 
 To run the provided example execute:
