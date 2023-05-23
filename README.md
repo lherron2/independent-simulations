@@ -79,12 +79,12 @@ sbatch gen_seeds.sh --pdb 1zih --iter 0 --num-structs 5 --min-temp 310 --max-tem
 
 # running equilibration from master_equil.yaml
 for i in {0..4}; do
-  sbatch run_equil.sh --pdb 1zih --structid $i;
+  sbatch run_equil.sh --pdb 1zih --iter 0 --structid $i;
 done
 
 # running production from master_equil.yaml
 for i in {0..4}; do
-  sbatch run_prod.sh --pdb 1zih --structid $i;
+  sbatch run_prod.sh --pdb 1zih --iter 0 --structid $i;
 done
 
 ```
@@ -93,12 +93,12 @@ Once the simulations are done running, postprocess them by running:
 ```
 # concatenating production trajectories and removing solvent
 for i in {0..4}; do
-  sbatch remove_solvent.sh --pdb 1zih --structid $i;
+  sbatch remove_solvent.sh --pdb 1zih ---iter 0 -structid $i;
 done
 
 # concatenating production trajectories while keeping solvent
 for i in {0..4}; do
-  sbatch trjcat.sh --pdb 1zih --structid $i;
+  sbatch trjcat.sh --pdb 1zih --iter 0 --structid $i;
 done
 
 # computing relevent quantities from desolvated trajectory
