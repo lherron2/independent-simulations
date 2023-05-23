@@ -1,4 +1,4 @@
-#!/bin/bash
+#/bin/bash
 #SBATCH -t 00:10:00
 #SBATCH --ntasks-per-node=1
 #SBATCH --job-name=gen_seeds
@@ -6,13 +6,14 @@
 #SBATCH --output=outfiles/gen_seeds.out
 
 DOCSTRING=$"""
-Script which generates seeds for an RNA simulation based on clustering order parameters
-recorded from Rosetta outputs. This script requires that the Rosetta outputs are saved
-as a trajectory in an xtc file with the topology saved in a pdb file. In this script the
-names are expected to be \${pdb}_fixed.xtc and \${pdb}_top.pdb. \n
+Script which generates seeds for an RNA simulation based on clustering performed on the
+Rosetta outputs. This script requires that the rosetta outputs are saved
+as an xtc trajectory file and a pdb topology file. In this script the
+names are expected to be \${pdb}_fixed.xtc and \${pdb}_fixed_top.pdb. The 'fixed' in 
+the names is because the trajectory and topology are the outputs of postprocess_rosetta.sh\n
 \n
-Using these files the script will create a directory \${pdb}_iter\${iter} which contains
-the simulation directories. \n
+Using these files the script will create a directory \${PROJECT_PATH}/\${pdb}/\${pdb}_iter\${iter} which contains
+the simulation directories. For example, independent-simulations/openmm/experiments/1zih/1zih_iter0.\n
 \n
 Args:\n
 --pdb: The pdb ID of the structure (or some other identifier).\n
