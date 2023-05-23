@@ -37,8 +37,8 @@ BP = np.load(args.annot_file)
 # energy less than mean - std and
 # base pairs more than mean - std
 
-energy_cutoff = energy.mean() - energy.std()
-BP_cutoff = BP.mean() - BP.std()
+energy_cutoff = energy.mean()
+BP_cutoff = BP.mean()
 idxs = np.arange(len(BP))
 
 stable_idxs = idxs[(energy<energy_cutoff)&(BP>BP_cutoff)]
