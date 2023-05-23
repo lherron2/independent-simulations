@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 #SBATCH -t 00:10:00
 #SBATCH --ntasks-per-node=1
 #SBATCH --job-name=gen_seeds
