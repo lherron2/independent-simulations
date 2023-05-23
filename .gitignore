@@ -2,3 +2,5 @@
 data/
 experiments/
 sourceme.sh
+outfiles/
+__pycache__
