@@ -39,7 +39,10 @@ for dir in get_simulation_dirs(args.root_path, master_config.identifier):
 
     name_prefix=f"{master_config.pdbid}_{master_config.identifier}{sim_config.structid}"
     nosol_xtc = os.path.join(dir.path, f"{name_prefix}_nosol.xtc")
-    traj_dict[sim_config.temperature] = md.load(nosol_xtc, top=args.topology).center_coordinates()
+    try:
+        traj_dict[sim_config.temperature] = md.load(nosol_xtc, top=args.topology).center_coordinates()
+    except:
+        None
 
 
 traj_dict = convert_key_type(traj_dict, int)
