@@ -41,7 +41,17 @@ done
 ```
 where `$i` refers to the index of a simulation directory setup by `gen_seeds.sh`. For `run_prod.sh`, to resume simulations set the `resume` variable in `master_prod.yaml` to `True`. Make sure `resume = False` if starting from scratch. 
 
-Pro tip for clusters supporting a scavenger partition: set the first round of simulations to run in the gpu partition for a very short amount of time (but greater than `sampling_freq`) so that a checkpoint is created. Once the short simulations finish, set `resume=True` and re-submit the jobs to the scavenger partition. They will run when the cluster is being underutilized while yielding to more high-priority simulations.
+Pro tip for clusters that have a scavenger partition:
+
+To optimize resource allocation, you can follow these steps:
+
+1.In the first round of simulations, set them to run in the GPU partition for a very short amount of time. Make sure the duration is greater than the sampling frequency so that a checkpoint is created.
+
+2.Once the short simulations have finished, set `resume = True`.
+
+3.Re-submit the jobs to the scavenger partition.
+
+By doing this, the simulations will run when the cluster is underutilized, allowing for more high-priority simulations to take precedence. This approach helps optimize the usage of available resources on the cluster.
 
 Once the simulation are complete, run 
 ```
@@ -55,9 +65,19 @@ for sim_idx in {0..$N}; do
   trjcat.sh --pdb $PDB --structid $i;
 done
 ```
-The former will remove solvent from the `xtc` files produced during simulation, while the latter will concatenate all of the `xtc` files together to for a continuous trajectory. These are the trajectories that will be used to create the diffusion dataset and in later analysis.
 
-Then, run `postprocess_simulations.py --pdb $PDB` to compute relevant quantities for the simulation. Once of these quantities is G vectors (as defined in XXX), which will be used to create a dataset to train a diffusion model with. To create the dataset, run `gvec_to_dataset.sh $PDB`, which will write the dataset to `$PROJECT_PATH/$PDB/data/`
+There are two important steps to prepare the simulation data:
+
+1. Remove solvent from the `xtc` files generated during the simulation. This can be done using the former method.
+
+2. Concatenate all the `xtc` files together to form a continuous trajectory. This step is essential for creating the diffusion dataset and conducting subsequent analysis.
+
+After completing these steps, you can proceed with the following:
+
+- Run the `postprocess_simulations.py` script with the parameter `--pdb $PDB` to compute relevant quantities for the simulation. One of these quantities is the G vectors, as defined in XXX. These G vectors will be used to create a dataset for training a diffusion model.
+
+- To create the dataset, execute the `rvec_to_dataset.sh $PDB` script. It will write the dataset to the `$PROJECT_PATH/$PDB/data/` directory.
+
 ## EXAMPLE
 
 The provided example located in `openmm/experiments/` will run five simulations of a GCAA tetraloop RNA (pdbid: 1zih) at temperatures between 310K and 410K.
