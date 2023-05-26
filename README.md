@@ -45,11 +45,11 @@ Pro tip for clusters that have a scavenger partition:
 
 To optimize resource allocation, you can follow these steps:
 
-1.In the first round of simulations, set them to run in the GPU partition for a very short amount of time. Make sure the duration is greater than the sampling frequency so that a checkpoint is created.
+1. In the first round of simulations, set them to run in the GPU partition for a very short amount of time. Make sure the duration is greater than the sampling frequency so that a checkpoint is created.
 
-2.Once the short simulations have finished, set `resume = True`.
+2. Once the short simulations have finished, set `resume = True`.
 
-3.Re-submit the jobs to the scavenger partition.
+3. Re-submit the jobs to the scavenger partition.
 
 By doing this, the simulations will run when the cluster is underutilized, allowing for more high-priority simulations to take precedence. This approach helps optimize the usage of available resources on the cluster.
 
