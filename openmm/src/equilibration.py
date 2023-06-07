@@ -26,10 +26,10 @@ master_config = add_args(master_config, simtype='equil')
 minim_equil_steps = 0 # unstable for RNA in vaccuum
 minim_equil_dt = 0.0005
 
-NVT_equil_1_steps = 1000
-NVT_equil_1_dt = 0.0005
+NVT_equil_1_steps = 5000
+NVT_equil_1_dt = 0.0001
 
-NVT_equil_2_steps = 1000
+NVT_equil_2_steps = 5000
 NVT_equil_2_dt = 0.001
 
 sampling_steps = int(master_config.sampling_freq / master_config.timestep)
